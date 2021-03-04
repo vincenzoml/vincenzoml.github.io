@@ -7,32 +7,154 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1 {font-family: "Raleway", Arial, sans-serif}
-h1 {letter-spacing: 6px}
-.w3-row-padding img {margin-bottom: 12px}
+    body,
+    h1 {
+        font-family: "Raleway", Arial, sans-serif
+    }
+
+    h1 {
+        letter-spacing: 6px
+    }
+
+    .w3-row-padding img {
+        margin-bottom: 12px
+    }
 </style>
+
 <body>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-content" style="max-width:1500px">
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-content" style="max-width:1500px">
 
-<!-- Header -->
-<header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
-  <h1 class="w3-xlarge">Vincenzo Ciancia</h1>
-  <h1>ISTI-CNR Pisa</h1>
-  
-  <div class="w3-padding-32">
-    <div class="w3-bar w3-border">
-      <a href="#" class="w3-bar-item w3-button">Home</a>
-      <a href="#" class="w3-bar-item w3-button w3-light-grey">Portfolio</a>
-      <a href="#" class="w3-bar-item w3-button">Contact</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small">Weddings</a>
-    </div>
-  </div>
-</header>
+        <!-- Header -->
+        <header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
+            <h1 class="w3-xlarge">Vincenzo Ciancia</h1>
+            <h1>ISTI-CNR Pisa</h1>
 
-<!-- Photo Grid  COULD BE USED FOR PAPERS OR PREVIEWS-->
-<!--div class="w3-row-padding w3-grayscale" style="margin-bottom:128px">
+            <div class="w3-padding-32">
+                <div class="w3-bar w3-border">
+                    <a href="#" class="w3-bar-item w3-button">Home</a>
+                    <a href="#research" class="w3-bar-item w3-button w3-light-grey">Research</a>
+                    <a href="#papers" class="w3-bar-item w3-button">Papers</a>
+                    <a href="#tools" class="w3-bar-item w3-button">Tools</a>
+                    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+                </div>
+            </div>
+        </header>
+
+        <div id="main">
+            <h1>About Me</h1>
+            <p>
+                I am a researcher at <a href="https://www.isti.cnr.it/en/">ISTI-CNR</a> in Pisa, working with the <a
+                    href="https://www.isti.cnr.it/en/research/laboratories/4/Formal_Methods_and_Tools_FMT">Formal
+                    Methods & Tools Laboratory</a> (lab. coordinator: Maurice Henri ter Beek). Previously, I've been
+                working at the IIT-CNR in Pisa, at the ILLC (University of Amsterdam), and at the Universidad
+                Complutense in Madrid.
+            </p>
+
+            <p>
+                I received my Ph.D. in 2009 from the <a
+                href="https://di.unipi.it/en/">Department of Computer
+                Science</a> at the University of Pisa, under the supervision of
+                Prof. Ugo Montanari. My Ph.D. thesis and subsequent work was
+                devoted to Coalgebras, Presheaf Categories, and History
+                Dependent Automata.
+            </p>
+
+            <p>I am currently involved in the Italian MIUR PRIN project <a href="http://itmatters.imtlucca.it/">Methods and Tools for Trustworthy Smart Systems (It-Matters)
+             </a>            
+        </div>
+
+        <div id="research">
+            <h1>Research interests</h1>
+
+            <p>
+                My research interests include Formal Methods in Computer Science, Spatial Logics and Spatio-Temporal
+                Model Checking, Automata and Category Theory, with an accent on pairing solid mathematical theories to
+                usable, albeit prototypical tools.
+            </p>
+
+            <p>
+                Recently, my interests have been mostly focused on the VoxLogicA
+                project, bringing formally specified expert knowledge to the
+                realm of Medical Imaging via Model checking, in collaboration
+                with colleagues at ISTI-CNR (Giovanna Broccia, Diego Latella,
+                Mieke Massink), at the San Luca Hospital in Lucca (Gina
+                Belmonte) and at the department of Computer Science in Pisa
+                (Laura Bussi, Fabio Gadducci).
+            </p>
+
+            <p><a href="http://www.voxlogica.com">VoxLogicA website</a></p>
+        </div>
+
+        <div id="papers">
+            <h1>Papers</h1>
+
+            <p>
+                Recent work:
+            </p>
+            <p>
+            <table class="w3-table">
+                <tr>
+                    <td>
+                        Fabrizio Banci Buonamici, Gina Belmonte, Vincenzo Ciancia, Diego Latella, Mieke Massink:
+                        Spatial logics and model checking for medical imaging. Int. J. Softw. Tools Technol. Transf.
+                        22(2):
+                        195-217 (2020)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Laura Bussi, Vincenzo Ciancia, Fabio Gadducci:
+                        A spatial model checker in GPU (extended version). CoRR abs/2010.07284 (2020)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gina Belmonte, Giovanna Broccia, Vincenzo Ciancia, Diego Latella, Mieke Massink:
+                        Using Spatial Logic and Model Checking for Nevus Segmentation. CoRR abs/2012.13289 (2020,
+                        updated
+                        version to appear in the proceedings of <a href="https://www.formalise.org/">FORMALISE 2021</a>)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Vincenzo Ciancia, Diego Latella, Mieke Massink, Erik P. de Vink:
+                        Towards Spatial Bisimilarity for Closure Models: Logical and Coalgebraic Characterisations. CoRR
+                        abs/2005.05578 (2020)
+                    </td>
+                </tr>
+            </table>
+            </p>
+
+            Full list of published papers:
+
+            <a href="https://dblp.org/pid/50/1930.html">@DBLP</a> <a
+                href="https://openportal.isti.cnr.it/results?qf=cnrautb&qv=Vincenzo%20Ciancia&sort=date&order=1">@CNR</a>
+        </div>
+
+        <div id="tools">
+            <h1>Tools</h1>
+            <p>
+                <a href="https://github.com/vincenzoml/VoxLogicA">VoxLogicA:</a> a model checker for 2D and 3D
+                (voxel-based) images, mostly targeted to medical imaging. In its repository, also more experimental
+                tools are available: a variant for generic graphs, one for polyhedra (joint work with Nick Bezhanisvili,
+                David Gabelaia, Gianluca Grilletti, Diego Latella, Mieke Massink), and a GPU-based implementation (joint
+                work with Laura Bussi, Fabio Gadducci)
+            </p>
+            <p>
+                <a href="https://github.com/vincenzoml/topochecker">Topochecker</a>: a topological model checker. Can
+                verify spatio-temporal systems where space is described either by (evolving) images or by graphs.
+            </p>
+        </div>
+
+        <div id="contact">
+            <h1>Contact</h1>
+            <a href="mailto://vincenzo.ciancia@isti.cnr.it">vincenzo.ciancia@isti.cnr.it</a>
+        </div>
+
+        <!-- Photo Grid  COULD BE USED FOR PAPERS OR PREVIEWS-->
+        <!--div class="w3-row-padding w3-grayscale" style="margin-bottom:128px">
   <div class="w3-half">
     <img src="/w3images/wedding.jpg" style="width:100%">
     <img src="/w3images/rocks.jpg" style="width:100%">
@@ -52,20 +174,24 @@ h1 {letter-spacing: 6px}
     <img src="/w3images/underwater.jpg" style="width:100%">
   </div>
 </div-->
-  
-<!-- End Page Content -->
-</div>
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large"> 
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <!-- End Page Content -->
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large">
+        <!--i class="fa fa-facebook-official w3-hover-opacity"></i>
   <i class="fa fa-instagram w3-hover-opacity"></i>
   <i class="fa fa-snapchat w3-hover-opacity"></i>
   <i class="fa fa-pinterest-p w3-hover-opacity"></i>
   <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
+  <i class="fa fa-linkedin w3-hover-opacity"></i-->
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
+                class="w3-hover-text-green">w3.css</a></p>
+    </footer>
 
 </body>
+
 </html>
