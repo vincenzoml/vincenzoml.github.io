@@ -1,0 +1,28 @@
+<html lang="en">
+    
+<head>
+    <script src="node_modules/cornerstone-core/dist/cornerstone.min.js"></script>
+    <script src="node_modules/@cornerstonejs/nifti-image-loader/dist/cornerstoneNIFTIImageLoader.min.js"></script>    
+</head>
+
+<body>
+    <div id="test"></div>
+</body>
+<script>
+    (async () => {
+        cornerstoneNIFTIImageLoader.external.cornerstone = cornerstone
+
+        let div = document.getElementById("test")
+
+        cornerstone.enable(div)
+
+        let img = await cornerstone.loadImage("nifti:Brats17_TCIA_471_1_flair.nii.gz#75")
+        let overlay = await cornerstone.loadImage("nifti:Brats17_TCIA_471_1_seg.nii.gz#75")
+
+        cornerstone.displayImage(div, img)
+        let id = cornerstone.addLayer(div, overlay)
+        cornerstone.removeLayer(div, id)
+    })()
+</script>
+
+</html>
