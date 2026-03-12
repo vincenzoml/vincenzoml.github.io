@@ -1,321 +1,697 @@
 <!DOCTYPE html>
-<html>
-<title>Vincenzo Ciancia - Researcher in Computer Science @ ISTI-CNR Pisa</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    body,
-    h1 {
-        font-family: "Raleway", Arial, sans-serif
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VoxLogicA | Spatial model checking for medical image analysis</title>
+  <meta
+    name="description"
+    content="VoxLogicA is a research project on spatial model checking, declarative image analysis, and hybrid AI for medical imaging."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --paper: #fcfbf8;
+      --ink: #161616;
+      --muted: #5f5a52;
+      --line: #d8d1c6;
+      --accent: #8d2f23;
+      --accent-soft: #d8b8b2;
+      --accent-cold: #6d8b95;
+      --max: 1120px;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f3f0ea 0%, #f8f6f1 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wrap {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246, 244, 239, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(22, 22, 22, 0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      min-height: 68px;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .nav a:hover {
+      color: var(--ink);
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 42px;
+      align-items: start;
+    }
+
+    .kicker,
+    .section-kicker {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Fraunces", serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
     }
 
     h1 {
-        letter-spacing: 6px
+      margin-top: 16px;
+      font-size: clamp(2.8rem, 6vw, 5.6rem);
+      line-height: 1.02;
+      max-width: 10ch;
     }
 
-    .w3-row-padding img {
-        margin-bottom: 12px
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.08;
     }
-</style>
 
+    h3 {
+      font-size: 1.35rem;
+      line-height: 1.2;
+    }
+
+    .lead {
+      max-width: 68ch;
+      margin: 26px 0 0;
+      font-size: 1.06rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .summary {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .summary p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.97rem;
+    }
+
+    .summary p:last-child {
+      margin-bottom: 0;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .link-pill {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .link-pill:hover {
+      color: var(--ink);
+      border-color: #b8aea0;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 32px;
+      padding: 26px 0 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-intro {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .text-block {
+      background: transparent;
+      padding: 6px 0;
+    }
+
+    .text-block p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .text-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .panel p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .code {
+      margin: 16px 0 0;
+      padding: 16px 18px;
+      border-radius: 12px;
+      background: #f2eee7;
+      border: 1px solid #e0d8ca;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      color: #433f39;
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    .figure-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+
+    .figure-card img {
+      border-radius: 12px;
+      border: 1px solid rgba(22, 22, 22, 0.08);
+    }
+
+    figcaption {
+      padding: 12px 2px 2px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    .pub {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .pub:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .pub-meta {
+      font-size: 0.86rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .pub p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .footer {
+      padding: 28px 0 56px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    ul.clean {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.clean li {
+      margin: 0 0 10px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .section-head,
+      .two-col,
+      .method-grid,
+      .visual-grid,
+      .footer-grid,
+      .pub {
+        grid-template-columns: 1fr;
+      }
+
+      .pub {
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .wrap {
+        width: min(calc(100% - 24px), var(--max));
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+    }
+  </style>
+</head>
 <body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top">VoxLogicA</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#materials">Materials</a>
+        <a href="#publications">Publications</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-content" style="max-width:1500px">
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div>
+          <span class="kicker">Research project</span>
+          <h1>Spatial model checking for medical image analysis</h1>
+          <p class="lead">
+            VoxLogicA is a line of research on declarative image analysis grounded in closure spaces, spatial logic,
+            and model checking. Its central question is whether medically relevant image-analysis procedures can be
+            expressed in concise, human-readable specifications and executed with sufficient efficiency, accuracy, and
+            transparency to support research and, in the longer term, clinical practice.
+          </p>
+          <div class="links">
+            <a class="link-pill" href="https://github.com/vincenzoml/VoxLogicA">Software repository</a>
+            <a class="link-pill" href="https://voxlogica-project.github.io/VoxLogicA-UI/">UI demonstration</a>
+            <a class="link-pill" href="https://dblp.org/pid/50/1930.html">DBLP bibliography</a>
+          </div>
+        </div>
+        <aside class="summary">
+          <p>
+            The project begins with the 2019 TACAS paper introducing VoxLogicA as a spatial model checker for
+            declarative image analysis.
+          </p>
+          <p>
+            Recent work extends this direction toward symbolic and hybrid neuro-symbolic segmentation methods, with
+            case studies on BraTS and BrainWeb and software/interface work connected to THE, STENDHAL, and FM4HD.
+          </p>
+          <p>
+            A parallel research strand studies usability and interface design for bringing spatial model checking
+            closer to medical researchers and clinicians.
+          </p>
+        </aside>
+      </div>
+    </section>
 
-        <!-- Header -->
-        <header class="w3-panel w3-center w3-opacity" style="padding:128px
-        16px">
-            <h1 class="w3-xlarge">Vincenzo Ciancia</h1>
-            <h1>ISTI-CNR Pisa</h1>
-
-            <p>Last updated: September 2025</p>
-
-            <div class="w3-padding-32">
-                <div class="w3-bar w3-border">
-                    <a href="#" class="w3-bar-item w3-button">Home</a>
-                    <a href="#research" class="w3-bar-item w3-button
-                    w3-light-grey">Research</a>
-                    <a href="#projects" class="w3-bar-item w3-button
-                    w3-light-grey">Projects</a>
-                    <a href="#papers" class="w3-bar-item w3-button">Papers</a>
-                    <a href="#tools" class="w3-bar-item w3-button">Tools</a>
-                    <a href="#contact" class="w3-bar-item w3-button
-                    w3-hide-small">Contact</a>
-                </div>
-            </div>
-        </header>
-
-        <div class="w3-container w3-margin">
-            <div id="main">
-                <h1>About Me</h1>
-                <p>
-                    I am a researcher at <a href="https://www.isti.cnr.it/en/">ISTI-CNR</a> in Pisa,
-                    working in the <a
-                        href="https://www.isti.cnr.it/en/research/laboratories/4/Formal_Methods_and_Tools_FMT">Formal
-                        Methods & Tools Laboratory</a>. Previously, I've been
-                    working at the IIT-CNR in Pisa, at the ILLC (University of
-                    Amsterdam), and at the Universidad Complutense in Madrid.
-                </p>
-
-
-
-                <p>
-                    I received my Ph.D. in 2009 from the <a href="https://di.unipi.it/en/">Department of Computer
-                        Science</a> at the University of Pisa, under the supervision
-                    of Prof. Ugo Montanari. My Ph.D. thesis and subsequent work
-                    was devoted to Coalgebras, Presheaf Categories, and History
-                    Dependent Automata.
-                </p>
-
-
-                <p>
-                    <a href="https://www.isti.cnr.it/People/V.Ciancia">My
-                        institutional page @ISTI-CNR</a>
-                </p>
-            </div>
-            <div id="projects">
-                <h1>Projects</h1>
-                <p>I am currently involved in the following projects:</p>
-                <table>
-                    <tr>
-                        <td>
-                            EU NRPP <b>THE</b>: Tuscany Health Ecosystem. ECS00000017.<br> NRPP Mission 4, Component 2
-                            Investment 1.5. <em>Finanziato dall'Unionne Europea - NextGenerationEU.</em>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Bilateral Agreements CNR-SRNSF (Georgia) <b>Model Checking for Polyhedral Logics</b>.<br>
-                            CUP B53C23000240005 project no. #CNR-22-010.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            MUR PRIN <b>STENDHAL</b>: Spatio-Temporal Enhancement of Neural nets for
-                            Deeply Hierarchical Automatised Logic.<br> <em>Finanziato dall'Unione Europea -
-                                NextGenerationEU.</em>
-                        </td>
-                    </tr>
-                    <td>MIUR PRIN <a href="http://itmatters.imtlucca.it/"><b>IT-MATTERS</b></a>: Methods
-                        and Tools for
-                        Trustworthy Smart Systems (finished)
-                    </td>
-                    </tr>
-                </table>
-
-                <div id="research">
-                    <h1>Research interests</h1>
-
-                    <p>
-                        My research interests include Formal Methods in Computer
-                        Science, Spatial Logics and Spatio-Temporal Model Checking,
-                        Automata and Category Theory, Artificial Intelligence, with
-                        an accent on pairing solid mathematical theories with usable
-                        tools and implementation.
-                    </p>
-
-                    <p>
-                        Recently, my interests have been mostly focused on the
-                        VoxLogicA project, bringing formally specified expert
-                        knowledge to the realm of Medical Imaging via Model
-                        checking, in collaboration with colleagues at ISTI-CNR
-                        (Giovanna Broccia, Diego Latella, Mieke Massink), at the San
-                        Luca Hospital in Lucca (Gina Belmonte) and at the department
-                        of Computer Science in Pisa (Laura Bussi, Fabio Gadducci).
-                    </p>
-
-                    <p><a href="http://www.voxlogica.com">VoxLogicA website</a></p>
-                </div>
-
-                <div id="papers">
-                    <h1>Papers</h1>
-                    Full list of published papers:
-
-                    <a href=https://dblp.org/pid/50/1930.html>@DBLP</a> <a
-                        href=https://publications.cnr.it/authors/vincenzo.ciancia>@CNR
-                        (from 2012 on)
-                    </a>
-
-                    <p>
-                        Selected recent work:
-                    </p>
-
-                    <table class="w3-table">
-                        <tr>
-                            <td>
-                                Gina Belmonte, Vincenzo Ciancia, Mieke Massink: Symbolic and hybrid AI for brain tissue segmentation using spatial model checking. <a href="https://dblp.org/db/journals/artmed/artmed167.html#BelmonteCM25">Artif. Intell. Medicine 167: 103154 (2025)</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Vincenzo Ciancia, Diego Latella, Mieke Massink: Ten Years of Spatial Model Checking. <a href="https://dblp.org/rec/conf/birthday/CianciaLM25.html">Rebeca for Actor Analysis in Action 2025: 406-424</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Nick Bezhanishvili, Laura Bussi, Vincenzo Ciancia, David Fernández-Duque, David Gabelaia: Logics of Polyhedral Reachability. <a href="https://dblp.org/rec/conf/aiml/BezhanishviliBC24.html">AiML 2024: 187-204</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Nick Bezhanishvili, Vincenzo Ciancia, David Gabelaia, Mamuka Jibladze, Diego Latella, Mieke Massink, Erik P. de Vink: Weak Simplicial Bisimilarity for Polyhedral Models and SLCSη. <a href="https://dblp.org/rec/conf/forte/BezhanishviliCGJLMV24.html">FORTE 2024: 20-38</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Gina Belmonte, Laura Bussi, Vincenzo Ciancia, Diego Latella, Mieke Massink: Towards Hybrid-AI in Imaging Using VoxLogicA. <a href="https://dblp.org/rec/conf/isola/BelmonteBCLM24.html">ISoLA (4) 2024: 205-221</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Davide Basile, Maurice H. ter Beek, Laura Bussi,
-                                Vincenzo Ciancia: A toolchain for strategy synthesis
-                                with spatial properties. <a
-                                    href="https://link.springer.com/article/10.1007/s10009-023-00730-1">Int. J. Softw.
-                                    Tools
-                                    Technol. Transf. 25(5): 641-658 (2023)</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Laura Bussi, Vincenzo Ciancia, Fabio Gadducci: A
-                                Spatial Logic with Time and Quantifiers. DaLí 2023:
-                                1-19
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Vincenzo Ciancia, Jan Friso Groote, Diego Latella,
-                                Mieke Massink, Erik P. de Vink: Minimisation of
-                                Spatial Models Using Branching Bisimilarity. <a
-                                    href="https://dl.acm.org/doi/abs/10.1007/978-3-031-27481-7_16">FM
-                                    2023: 263-281</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Vincenzo Ciancia, David Gabelaia, Diego Latella,
-                                Mieke Massink, Erik P. de Vink: On Bisimilarity for
-                                Polyhedral Models and SLCS. <a
-                                    href="https://dl.acm.org/doi/abs/10.1007/978-3-031-35355-0_9">FORTE 2023:
-                                    132-151</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Nick Bezhanishvili, Vincenzo Ciancia, David
-                                Gabelaia, Gianluca Grilletti, Diego Latella, Mieke
-                                Massink: Geometric Model Checking of Continuous
-                                Space. <a href="https://arxiv.org/pdf/2105.06194.pdf">Log. Methods Comput. Sci. 18(4)
-                                    (2022)</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Giovanna Broccia, Vincenzo Ciancia, Diego Latella,
-                                Mieke Massink: Towards a GUI for Declarative Medical
-                                Image Analysis: Cognitive and Memory Load Issues.
-                                HCI (38) 2022: 103-111
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Laura Bussi, Vincenzo Ciancia, Fabio Gadducci:
-                                Towards a Spatial Model Checker on GPU. FORTE 2021:
-                                188-196
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Gina Belmonte, Giovanna Broccia, Vincenzo Ciancia, Diego
-                                Latella, Mieke Massink: Feasibility of Spatial Model
-                                Checking for Nevus Segmentation. FormaliSE@ICSE 2021: 1-12
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> Vincenzo Ciancia, Gina Belmonte, Diego Latella, Mieke
-                                Massink: A Hands-On Introduction to Spatial Model Checking
-                                Using VoxLogicA - - Invited Contribution. SPIN 2021: 22-41
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Vincenzo Ciancia, Yde Venema: Omega-Automata: A
-                                Coalgebraic Perspective on Regular omega-Languages. CALCO
-                                2019: 5:1-5:18
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Gina Belmonte, Vincenzo Ciancia, Diego Latella, Mieke
-                                Massink: VoxLogicA: A Spatial Model Checker for
-                                Declarative Image Analysis. <a
-                                    href="https://link.springer.com/chapter/10.1007/978-3-030-17462-0_16">TACAS (1)
-                                    2019: 281-298</a>
-                            </td>
-                        </tr>
-                    </table>
-
-
-
-                </div>
-
-                <div id="tools">
-                    <h1>Tools</h1>
-                    <p>
-                        <a href=https://github.com/vincenzoml/VoxLogicA>VoxLogicA:</a>
-                        a model checker for 2D and 3D (voxel-based) <b>images</b>, mostly
-                        targeted to medical imaging. In its repository, also more
-                        experimental tools are available: a variant for generic
-                        graphs, one for <b>polyhedra</b> (joint work with Nick
-                        Bezhanisvili, David Gabelaia, Gianluca Grilletti, Diego
-                        Latella, Mieke Massink), and a <b>GPU-based</b> implementation
-                        (joint work with Laura Bussi, Fabio Gadducci)
-                    </p>
-                    <p>
-                        <a href=https://github.com/vincenzoml/topochecker>Topochecker</a>:
-                        a topological model checker. Can verify spatio-temporal
-                        systems where space is described either by (evolving) images
-                        or by graphs.
-                    </p>
-                </div>
-
-                <div id="contact">
-                    <h1>Contact</h1>
-                    <a href="mailto://vincenzo.ciancia@isti.cnr.it">vincenzo.ciancia@isti.cnr.it</a>
-                </div>
-            </div>
-            <!-- Photo Grid  COULD BE USED FOR PAPERS OR PREVIEWS-->
-            <!--div class="w3-row-padding w3-grayscale" style="margin-bottom:128px">
-  <div class="w3-half">
-    <img src="/w3images/wedding.jpg" style="width:100%">
-    <img src="/w3images/rocks.jpg" style="width:100%">
-    <img src="/w3images/falls2.jpg" style="width:100%">
-    <img src="/w3images/paris.jpg" style="width:100%">
-    <img src="/w3images/nature.jpg" style="width:100%">
-    <img src="/w3images/mist.jpg" style="width:100%">
-    <img src="/w3images/paris.jpg" style="width:100%">
-  </div>
-
-  <div class="w3-half">
-    <img src="/w3images/underwater.jpg" style="width:100%">
-    <img src="/w3images/ocean.jpg" style="width:100%">
-    <img src="/w3images/wedding.jpg" style="width:100%">
-    <img src="/w3images/mountainskies.jpg" style="width:100%">
-    <img src="/w3images/rocks.jpg" style="width:100%">
-    <img src="/w3images/underwater.jpg" style="width:100%">
-  </div>
-</div-->
-
-            <!-- End Page Content -->
+    <section class="section" id="overview">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Overview</span>
+            <h2>Research context</h2>
+          </div>
+          <div class="section-intro">
+            VoxLogicA sits between formal methods, qualitative spatial reasoning, medical image analysis, and
+            human-computer interaction. The aim is not simply to produce a segmentation tool, but to study a symbolic
+            paradigm in which image-analysis procedures remain explicit, inspectable, and reproducible.
+          </div>
         </div>
 
-        <!-- 
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
-            class="w3-hover-text-green">w3.css</a></p>
-    </footer> -->
+        <div class="two-col">
+          <div class="text-block">
+            <p>
+              The mathematical basis of the project comes from spatial logic interpreted over closure spaces, a
+              generalisation of topology suitable for discrete spatial structures such as digital images and graphs.
+              This provides a foundation for reasoning about neighbourhood, reachability, distance, and region growth.
+            </p>
+            <p>
+              On top of this foundation, VoxLogicA implements ImgQL, a language for executable image-analysis
+              specifications. The emphasis throughout the project is on procedures that remain short, compositional,
+              and close to the level at which domain experts reason about spatial constraints in images.
+            </p>
+          </div>
+          <div class="text-block">
+            <p>
+              The medical-imaging case studies focus on brain MRI, including glioblastoma segmentation and tissue
+              segmentation in healthy brain images. Validation reported in the publications uses public datasets such
+              as BraTS 2017, 2019, and 2020, together with BrainWeb.
+            </p>
+            <p>
+              More recent work investigates hybrid symbolic-subsymbolic procedures in which learned components and
+              logical procedures interact, as well as interface design intended to preserve formal rigor while reducing
+              cognitive overhead for end users.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="section" id="method">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Method</span>
+            <h2>Symbolic specifications over images</h2>
+          </div>
+          <div class="section-intro">
+            In the VoxLogicA approach, image-analysis procedures are written as spatial-logical specifications rather
+            than assembled as opaque pipelines. The relevant claim is methodological: domain knowledge can be encoded
+            as readable and executable structure.
+          </div>
+        </div>
+
+        <div class="method-grid">
+          <div class="panel">
+            <h3>ImgQL and model checking</h3>
+            <p>
+              ImgQL offers operators for intensity, distance, reachability, connectedness, similarity, and derived
+              spatial predicates. These specifications are then evaluated by a spatial model checker implemented in
+              VoxLogicA.
+            </p>
+            <p>
+              The implementation combines model-checking algorithms with established image-processing libraries and
+              parallel execution, making it possible to work with 3D medical images while keeping the procedure
+              explicitly represented.
+            </p>
+            <div class="code">let flair = intensity(flair)
+let hi = flair >. 0.95
+let vi = flair >. 0.86
+let hyper = flt(5.0, hi)
+let very = flt(2.0, vi)
+let lesion = touch(hyper, very)</div>
+          </div>
+          <div class="panel">
+            <h3>Why the approach is academically interesting</h3>
+            <p>
+              First, it connects spatial logic and closure-space semantics to a concrete and demanding application
+              domain. Second, it makes room for explainability and accountability in settings where pure
+              sub-symbolic methods are often criticised for opacity.
+            </p>
+            <p>
+              The AI in Medicine work argues that symbolic specifications can remain concise and directly inspectable,
+              while the hybrid line of work shows how learned components may be integrated without abandoning the
+              advantages of explicit logical structure.
+            </p>
+            <p>
+              The interface work extends this by asking how such methods can be made usable for medical researchers and
+              clinicians without severing the link between formal meaning and practical interaction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="materials">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Materials</span>
+            <h2>Software, workflow, and case-study imagery</h2>
+          </div>
+          <div class="section-intro">
+            The following images are drawn from the VoxLogicA UI work and from the AI in Medicine paper materials.
+            They document the software environment, the hybrid workflow, and an example segmentation overlay.
+          </div>
+        </div>
+
+        <div class="visual-grid">
+          <figure class="figure-card">
+            <img src="assets/ui-screen.png" alt="VoxLogicA UI showing viewers, datasets, and script editor">
+            <figcaption>
+              The web-based VoxLogicA UI developed in subsequent work on usability and deployment for research and
+              clinical contexts.
+            </figcaption>
+          </figure>
+          <div class="stack">
+            <figure class="figure-card">
+              <img src="assets/hybrid-flowchart.png" alt="Hybrid AI workflow diagram">
+              <figcaption>
+                Hybrid workflow combining learned predictions, logical segmentation, and expert-oriented review.
+              </figcaption>
+            </figure>
+            <figure class="figure-card">
+              <img src="assets/brain-overlay.png" alt="Brain MRI with segmentation overlay">
+              <figcaption>
+                Example segmentation overlay from the glioblastoma case-study material.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Publications</span>
+            <h2>Selected papers</h2>
+          </div>
+          <div class="section-intro">
+            A few publications are particularly central for understanding the project: the foundational TACAS paper,
+            the later hybrid-AI work, the AI in Medicine article, and the thesis/UI line.
+          </div>
+        </div>
+
+        <div class="pub-list">
+          <article class="pub">
+            <div class="pub-meta">2025<br>AI in Medicine</div>
+            <div>
+              <h3>Symbolic and hybrid AI for brain tissue segmentation using spatial model checking</h3>
+              <p>
+                Gina Belmonte, Vincenzo Ciancia, and Mieke Massink present symbolic and hybrid methods for 3D brain MRI
+                segmentation, with explicit discussion of explainability, accountability, and validation on public
+                benchmarks.
+              </p>
+              <div class="pub-links">
+                <a class="link-pill" href="https://dblp.org/db/journals/artmed/artmed167.html#BelmonteCM25">DBLP entry</a>
+                <a class="link-pill" href="https://github.com/VoxLogicA-Project/PublicationsBrainTumour">Paper and data repository</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-meta">2024<br>ISoLA</div>
+            <div>
+              <h3>Towards Hybrid-AI in Imaging Using VoxLogicA</h3>
+              <p>
+                This paper develops the project’s hybrid direction and studies how explicit logical procedures can
+                coexist with learned components in medical-imaging workflows.
+              </p>
+              <div class="pub-links">
+                <a class="link-pill" href="https://dblp.org/rec/conf/isola/BelmonteBCLM24.html">DBLP entry</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-meta">2019<br>TACAS</div>
+            <div>
+              <h3>VoxLogicA: A Spatial Model Checker for Declarative Image Analysis</h3>
+              <p>
+                Foundational publication introducing VoxLogicA and the idea of using spatial model checking for
+                declarative image analysis.
+              </p>
+              <div class="pub-links">
+                <a class="link-pill" href="https://link.springer.com/chapter/10.1007/978-3-030-17462-0_16">Publication</a>
+                <a class="link-pill" href="https://dblp.org/rec/conf/tacas/BelmonteCLM19.html">DBLP entry</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-meta">2025<br>UI / Thesis</div>
+            <div>
+              <h3>VoxLogicA UI</h3>
+              <p>
+                The UI work addresses browser-based deployment, collaborative workflows, and usability evaluation for
+                spatial model checking in medical imaging, including reported SUS and task-completion results.
+              </p>
+              <div class="pub-links">
+                <a class="link-pill" href="https://voxlogica-project.github.io/VoxLogicA-UI/">Demonstration</a>
+                <a class="link-pill" href="https://github.com/CoffeeStraw/VoxLogicA_UI_Thesis">Thesis repository</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer" id="resources">
+      <div class="wrap footer-grid">
+        <div>
+          <span class="section-kicker">Resources</span>
+          <h2>Repositories and references</h2>
+          <p class="small">
+            This page is intended as a compact academic entry point. It summarizes the project’s methodological
+            position and links to the main repositories, demonstrations, and bibliographic references.
+          </p>
+          <div class="links">
+            <a class="link-pill" href="https://github.com/vincenzoml/VoxLogicA">Core repository</a>
+            <a class="link-pill" href="https://github.com/vincenzoml/VoxLogicA/releases">Releases</a>
+            <a class="link-pill" href="https://github.com/VoxLogicA-Project/PublicationsBrainTumour">AI in Medicine repository</a>
+            <a class="link-pill" href="https://dblp.org/pid/50/1930.html">Vincenzo Ciancia on DBLP</a>
+          </div>
+        </div>
+        <div>
+          <span class="section-kicker">Institutional context</span>
+          <h2>Contact and affiliation</h2>
+          <ul class="clean">
+            <li><strong>Academic lead:</strong> Vincenzo Ciancia, ISTI-CNR Pisa.</li>
+            <li><strong>Email:</strong> <a href="mailto:vincenzo.ciancia@isti.cnr.it">vincenzo.ciancia@isti.cnr.it</a></li>
+            <li><strong>Institutional page:</strong> <a href="https://www.isti.cnr.it/en/about/people-detail/424/Vincenzo_Ciancia">ISTI-CNR profile</a></li>
+            <li><strong>Research areas:</strong> formal methods, spatial model checking, neuroimaging, explainable and hybrid AI.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
-
 </html>
