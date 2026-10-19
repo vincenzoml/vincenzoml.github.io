@@ -51,6 +51,19 @@
           "url": "https://github.com/nearbytes"
         }
       ]
+    },
+    {
+      "id": "formally-guided-agents",
+      "title": "Software developed by AI agents that can be trusted",
+      "problem": "How can large amounts of software produced by LLM agents be trusted when no person can read all of it?",
+      "why_hard": "Agents produce code faster than it can be reviewed; trust has to come from specifications, tests and a development process that the agents cannot bypass.",
+      "doing": "NAIMA, an LLM-driven, multi-agent project-management tool that enforces software-engineering checks and is used to develop itself and VoxLogicA 2.1.",
+      "links": [
+        {
+          "label": "NAIMA",
+          "url": "https://vincenzoml.github.io/naima"
+        }
+      ]
     }
   ],
   "recognition": [
