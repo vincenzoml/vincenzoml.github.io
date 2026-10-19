@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$name</title>
+<meta name="description" content="$description">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://vincenzoml.github.io/">
+<style>
+:root {
+  --bg: #fbfaf7; --fg: #1d1f21; --muted: #5d6166; --rule: #e3e0d8;
+  --accent: #1f5f8b; --card: #ffffff; --badge-bg: #f1ead6; --badge-fg: #6a4e00;
+  --maxw: 46rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15171a; --fg: #e6e4df; --muted: #a2a6ab; --rule: #2c3035;
+    --accent: #7fb6dd; --card: #1c1f23; --badge-bg: #3a3220; --badge-fg: #e7cf8f;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15171a; --fg: #e6e4df; --muted: #a2a6ab; --rule: #2c3035;
+  --accent: #7fb6dd; --card: #1c1f23; --badge-bg: #3a3220; --badge-fg: #e7cf8f;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 17px/1.6 Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+header { padding: 3rem 0 1.5rem; border-bottom: 1px solid var(--rule); }
+h1 { font-size: 2.1rem; line-height: 1.15; margin: 0 0 .4rem; font-weight: 600; letter-spacing: -.01em; }
+.role { margin: 0; font-size: 1.05rem; }
+.aff { margin: .15rem 0 0; color: var(--muted); font-size: .95rem; }
+nav { margin-top: 1.1rem; display: flex; flex-wrap: wrap; gap: .3rem 1rem;
+  font: 600 .8rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; text-transform: uppercase; letter-spacing: .06em; }
+nav a { text-decoration: none; }
+section { padding: 2rem 0 .5rem; }
+h2 { font: 600 .85rem/1.3 system-ui, -apple-system, "Segoe UI", sans-serif; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--muted); margin: 0 0 1rem; }
+h3 { font-size: 1.15rem; line-height: 1.3; margin: 0 0 .5rem; font-weight: 600; }
+p { margin: 0 0 .8rem; }
+.problem { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 1.1rem 1.2rem .5rem; margin-bottom: 1rem; }
+.problem dl { margin: 0; }
+.problem dt { font: 600 .75rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-top: .5rem; }
+.problem dd { margin: 0 0 .3rem; }
+.problem .more { font-size: .95rem; margin: .6rem 0; }
+ul.plain, ol.pubs { padding-left: 0; list-style: none; margin: 0; }
+ul.plain li, ol.pubs li { margin-bottom: .75rem; }
+.year { color: var(--muted); font-variant-numeric: tabular-nums; }
+.pub-title { font-weight: 600; }
+.badge { display: inline-block; font: 600 .7rem/1.6 system-ui, -apple-system, sans-serif; padding: 0 .45rem;
+  border-radius: 4px; background: var(--badge-bg); color: var(--badge-fg); vertical-align: .1em; margin-left: .3rem; }
+.note { color: var(--muted); font-size: .92rem; }
+.linkrow { display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; margin-top: .4rem; }
+footer { border-top: 1px solid var(--rule); margin-top: 2.5rem; padding: 1.2rem 0 2.5rem; color: var(--muted); font-size: .85rem;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+#theme { font: inherit; color: var(--accent); background: none; border: 1px solid var(--rule); border-radius: 4px; padding: .1rem .5rem; cursor: pointer; }
+@media (max-width: 480px) { body { font-size: 16px; } h1 { font-size: 1.75rem; } header { padding-top: 2rem; } }
+@media print { nav, #theme { display: none; } .problem { break-inside: avoid; } }
+</style>
+<script>
+try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>$name</h1>
+    <p class="role">$title</p>
+    <p class="aff">$affiliation</p>
+    <nav aria-label="Sections">
+      <a href="#open-problems">Open problems</a>
+      <a href="#recognition">Recognition</a>
+      <a href="#publications">Publications</a>
+      <a href="#software">Software</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+$body
+</main>
+<footer class="wrap">
+  <span>Last updated: $updated</span>
+  <button id="theme" type="button" aria-label="Toggle light/dark theme">Light / dark</button>
+</footer>
+<script>
+document.getElementById("theme").addEventListener("click", function () {
+  var root = document.documentElement;
+  var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme") === "dark"
+    : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var next = dark ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  try { localStorage.setItem("theme", next); } catch (e) {}
+});
+</script>
+</body>
+</html>
