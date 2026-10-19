@@ -9,135 +9,93 @@
 <link rel="canonical" href="https://vincenzoml.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #ffffff; --side: #f6f5f2; --fg: #1a1c1f; --muted: #646a72; --rule: #e6e3dc;
-  --accent: #1b5e8c; --accent-soft: #e8f0f6; --badge-bg: #f3ead2; --badge-fg: #6b4f00;
-  --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --serif: "Source Serif 4", Charter, Georgia, serif;
-}
+:root { --bg: #ffffff; --soft: #f5f7f9; --fg: #0f1720; --muted: #5b6672; --rule: #e5e9ee; --accent: #2457d6; --accent-soft: #eaf0fe; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #131518; --side: #1a1d21; --fg: #e7e5e1; --muted: #9ea4ab; --rule: #2b2f35;
-    --accent: #84b9de; --accent-soft: #1d2b36; --badge-bg: #3a3220; --badge-fg: #e7cf8f;
-  }
+  :root:not([data-theme="light"]) { --bg: #0c0f13; --soft: #141920; --fg: #e8ecf1; --muted: #93a0ad; --rule: #232a33; --accent: #7ea2ff; --accent-soft: #18233d; }
 }
-:root[data-theme="dark"] {
-  --bg: #131518; --side: #1a1d21; --fg: #e7e5e1; --muted: #9ea4ab; --rule: #2b2f35;
-  --accent: #84b9de; --accent-soft: #1d2b36; --badge-bg: #3a3220; --badge-fg: #e7cf8f;
-}
+:root[data-theme="dark"] { --bg: #0c0f13; --soft: #141920; --fg: #e8ecf1; --muted: #93a0ad; --rule: #232a33; --accent: #7ea2ff; --accent-soft: #18233d; }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.65 var(--sans); }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.65 Inter, system-ui, -apple-system, sans-serif; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
-
-.layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); min-height: 100vh; }
-aside { background: var(--side); border-right: 1px solid var(--rule); }
-.side { position: sticky; top: 0; padding: 3rem 2rem 2rem; max-height: 100vh; overflow-y: auto; }
-h1 { font: 600 1.9rem/1.15 var(--serif); margin: 0 0 .6rem; letter-spacing: -.01em; }
-.role { margin: 0 0 .5rem; font-weight: 500; font-size: .95rem; line-height: 1.45; }
-.aff { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.5; }
-.aff a { color: inherit; border-bottom: 1px solid var(--rule); }
-.side h2 { margin: 2rem 0 .5rem; }
-.side ul { list-style: none; padding: 0; margin: 0; font-size: .9rem; }
-.side li { margin: .15rem 0; }
-.side nav a { color: var(--fg); }
-.side nav a:hover { color: var(--accent); }
-#theme { margin-top: 2rem; font: 500 .8rem var(--sans); color: var(--muted); background: none;
-  border: 1px solid var(--rule); border-radius: 999px; padding: .25rem .8rem; cursor: pointer; }
-#theme:hover { color: var(--fg); }
-
-main { padding: 3rem 3.5rem 2rem; max-width: 50rem; }
-section { margin-bottom: 3rem; scroll-margin-top: 1.5rem; }
-h2 { font: 600 .72rem/1.3 var(--sans); text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin: 0 0 1.2rem; }
-main h2 { padding-bottom: .5rem; border-bottom: 1px solid var(--rule); }
-h3 { font: 600 1.2rem/1.35 var(--serif); margin: 0 0 .6rem; display: flex; gap: .7rem; align-items: baseline; }
+.wrap { max-width: 60rem; margin: 0 auto; padding: 0 24px; }
+.top { border-bottom: 1px solid var(--rule); position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); z-index: 1; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 3.4rem; gap: 1rem; }
+.brand { font: 600 1rem Inter Tight, Inter, sans-serif; color: var(--fg); }
+.top nav { display: flex; gap: 1.3rem; font-size: .88rem; }
+.top nav a { color: var(--muted); }
+.top nav a:hover { color: var(--fg); text-decoration: none; }
+.hero { padding-top: 4.5rem; padding-bottom: 2.5rem; }
+h1 { font: 700 3rem/1.05 "Inter Tight", Inter, sans-serif; letter-spacing: -.03em; margin: 0 0 1rem; }
+.role { font-size: 1.15rem; font-weight: 500; margin: 0; }
+.aff { color: var(--muted); margin: .2rem 0 0; }
+.aff a { color: inherit; }
+.chips { list-style: none; padding: 0; margin: 1.6rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.chips a { display: inline-block; padding: .3rem .85rem; border: 1px solid var(--rule); border-radius: 999px; font-size: .85rem; font-weight: 500; color: var(--fg); }
+.chips a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+section { padding: 2.2rem 0; border-top: 1px solid var(--rule); scroll-margin-top: 4rem; }
+#about { border-top: 0; padding-top: 0; }
+#about p { font-size: 1.15rem; line-height: 1.6; max-width: 46rem; color: var(--fg); }
+h2 { font: 600 1.5rem/1.2 "Inter Tight", Inter, sans-serif; letter-spacing: -.015em; margin: 0 0 1.4rem; }
+#about h2 { display: none; }
 p { margin: 0 0 .9rem; }
-#about p { font-size: 1.05rem; }
-
-.problem { padding: 1.2rem 0 .4rem; border-bottom: 1px solid var(--rule); }
-.problem:last-child { border-bottom: 0; }
-.num { flex: none; font: 600 .75rem/1.6rem var(--sans); width: 1.6rem; height: 1.6rem; text-align: center;
-  border-radius: 50%; background: var(--accent-soft); color: var(--accent); transform: translateY(-.1rem); }
-.problem dl { margin: 0 0 0 2.3rem; display: grid; grid-template-columns: 8.5rem 1fr; gap: .35rem 1rem; }
-.problem dt { font: 500 .8rem/1.7 var(--sans); color: var(--muted); padding-top: .1rem; }
-.problem dd { margin: 0; }
-.problem .more { margin: .7rem 0 .6rem 2.3rem; font-size: .9rem; font-weight: 500; }
-
+#open-problems { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+#open-problems h2 { grid-column: 1 / -1; margin-bottom: .4rem; }
+.problem { background: var(--soft); border: 1px solid var(--rule); border-radius: 14px; padding: 1.4rem 1.4rem 1rem; display: flex; flex-direction: column; }
+h3 { font: 600 1.08rem/1.35 "Inter Tight", Inter, sans-serif; margin: 0 0 .9rem; }
+.num { display: block; font-size: .75rem; font-weight: 600; color: var(--accent); letter-spacing: .08em; margin-bottom: .4rem; }
+.num::before { content: "PROBLEM "; }
+.problem dl { margin: 0; font-size: .92rem; flex: 1; }
+.problem dt { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-top: .7rem; }
+.problem dd { margin: .1rem 0 0; }
+.problem .more { margin: 1rem 0 0; font-size: .88rem; font-weight: 500; }
 ul.plain, ol.pubs { list-style: none; padding: 0; margin: 0; }
-ul.plain li, ol.pubs li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; margin-bottom: .8rem; }
-#software ul.plain li, #projects ul.plain li { display: block; }
-.year { color: var(--muted); font-variant-numeric: tabular-nums; font-size: .9rem; padding-top: .05rem; }
-.pub-title { font-weight: 600; color: var(--fg); }
+ul.plain li, ol.pubs li { padding: .7rem 0; border-bottom: 1px solid var(--rule); }
+ul.plain li:last-child, ol.pubs li:last-child { border-bottom: 0; }
+#recognition li, ol.pubs li { display: grid; grid-template-columns: 5rem 1fr; gap: 1rem; }
+.year { color: var(--muted); font-variant-numeric: tabular-nums; font-weight: 500; font-size: .9rem; }
+.pub-title { color: var(--fg); font-weight: 600; }
 .pub-title:hover { color: var(--accent); }
 .authors { color: var(--muted); font-size: .9rem; }
-.venue { font-style: italic; font-size: .9rem; }
-.badge { display: inline-block; font: 600 .68rem/1.6 var(--sans); padding: 0 .5rem; border-radius: 999px;
-  background: var(--badge-bg); color: var(--badge-fg); margin-left: .5rem; vertical-align: .12em; }
-.note { color: var(--muted); font-size: .88rem; }
-footer { color: var(--muted); font-size: .8rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
-
-@media (max-width: 860px) {
-  .layout { display: block; }
-  aside { border-right: 0; border-bottom: 1px solid var(--rule); }
-  .side { position: static; max-height: none; padding: 2rem 16px 1.5rem; }
-  .side .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem; }
-  .side nav { display: none; }
-  main { padding: 2rem 16px 1.5rem; }
-  .problem dl { margin-left: 0; grid-template-columns: 1fr; gap: 0; }
-  .problem dt { margin-top: .5rem; }
-  .problem .more { margin-left: 0; }
-  ul.plain li, ol.pubs li { grid-template-columns: 3.2rem 1fr; gap: .7rem; }
+.venue { font-size: .9rem; }
+.badge { display: inline-block; font-size: .7rem; font-weight: 600; padding: .05rem .55rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent); margin-left: .5rem; vertical-align: .1em; }
+.note { color: var(--muted); font-size: .9rem; }
+#software ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 0 2rem; }
+footer { border-top: 1px solid var(--rule); padding: 1.5rem 0 3rem; color: var(--muted); font-size: .85rem; }
+footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+#theme { font: inherit; color: var(--muted); background: none; border: 1px solid var(--rule); border-radius: 999px; padding: .15rem .8rem; cursor: pointer; }
+@media (max-width: 720px) {
+  .wrap { padding: 0 16px; } .top nav { display: none; }
+  .hero { padding-top: 2.5rem; } h1 { font-size: 2.3rem; }
+  #recognition li, ol.pubs li { grid-template-columns: 3rem 1fr; gap: .7rem; }
 }
-@media print { aside { position: static; } #theme, .side nav { display: none; } .layout { display: block; } }
 </style>
-<script>
-try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
-</script>
+<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
 </head>
 <body>
-<div class="layout">
-<aside>
-  <div class="side">
-    <h1>Vincenzo Ciancia</h1>
-    <p class="role">Senior Researcher (Primo Ricercatore), CNR-ISTI, Pisa</p>
-    <p class="aff"><a href="https://www.isti.cnr.it/en/research/laboratories/4/Formal_Methods_and_Tools_FMT">Formal Methods and Tools Laboratory</a>, <a href="https://www.isti.cnr.it/en/">Institute of Information Science and Technologies “A. Faedo”, Consiglio Nazionale delle Ricerche</a></p>
-    <nav aria-label="Sections">
-      <h2>On this page</h2>
-      <ul>
-        <li><a href="#open-problems">Open problems</a></li>
-        <li><a href="#publications">Selected publications</a></li>
-        <li><a href="#recognition">Recognition and service</a></li>
-        <li><a href="#software">Software</a></li>
-        <li><a href="#projects">Projects</a></li>
-      </ul>
-    </nav>
-    <div class="cols">
-      <div>
-        <h2>Profiles</h2>
-        <ul>
+<div class="top"><div class="wrap">
+  <a class="brand" href="#">Vincenzo Ciancia</a>
+  <nav><a href="#open-problems">Open problems</a><a href="#publications">Publications</a><a href="#software">Software</a><a href="#projects">Projects</a></nav>
+</div></div>
+<header class="wrap hero">
+  <h1>Vincenzo Ciancia</h1>
+  <p class="role">Senior Researcher (Primo Ricercatore), CNR-ISTI, Pisa</p>
+  <p class="aff"><a href="https://www.isti.cnr.it/en/research/laboratories/4/Formal_Methods_and_Tools_FMT">Formal Methods and Tools Laboratory</a>, <a href="https://www.isti.cnr.it/en/">Institute of Information Science and Technologies “A. Faedo”, Consiglio Nazionale delle Ricerche</a></p>
+  <ul class="chips">
 <li><a href="https://dblp.org/search?q=Vincenzo+Ciancia">DBLP</a></li>
 <li><a href="https://scholar.google.com/citations?user=MxkeE_AAAAAJ">Google Scholar</a></li>
 <li><a href="https://orcid.org/0000-0003-1314-0574">ORCID</a></li>
 <li><a href="https://www.isti.cnr.it/People/V.Ciancia">CNR-ISTI</a></li>
 <li><a href="https://github.com/vincenzoml">GitHub</a></li>
 <li><a href="https://www.linkedin.com/in/vincenzo-ciancia-2032445/">LinkedIn</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Contact</h2>
-        <ul>
 <li><a href="mailto:vincenzo.ciancia@isti.cnr.it">vincenzo.ciancia@isti.cnr.it</a></li>
 <li><a href="mailto:vincenzoml@gmail.com">vincenzoml@gmail.com</a></li>
-        </ul>
-      </div>
-    </div>
-    <button id="theme" type="button" aria-label="Toggle light/dark theme">Light / dark</button>
-  </div>
-</aside>
-<main>
+  </ul>
+</header>
+<main class="wrap">
 <section id="about">
 <h2>Profile</h2>
 <p>I work on logic, formal verification and AI. My main research line is spatial model checking for image analysis, started in 2016 and developed in the VoxLogicA tools, from the underlying theory (spatial logics, bisimilarity, minimisation) to high-performance implementations and applications in medical imaging.</p>
@@ -227,17 +185,17 @@ try { var t = localStorage.getItem("theme"); if (t) document.documentElement.set
 <li><strong>Earlier</strong>, EU FP7 QUANTICOL, ASCENS, NESSoS, ANIKETOS · EU FP6 SENSORIA · PRIN IT-MaTTerS</li>
 </ul>
 </section>
-<footer>Last updated: 19 October 2026</footer>
 </main>
-</div>
+<footer><div class="wrap">
+  <span>Last updated: 19 October 2026</span>
+  <button id="theme" type="button">Light / dark</button>
+</div></footer>
 <script>
 document.getElementById("theme").addEventListener("click", function () {
-  var root = document.documentElement;
-  var cur = root.getAttribute("data-theme");
-  var dark = cur ? cur === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-  var next = dark ? "light" : "dark";
-  root.setAttribute("data-theme", next);
-  try { localStorage.setItem("theme", next); } catch (e) {}
+  var r = document.documentElement, c = r.getAttribute("data-theme");
+  var dark = c ? c === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  r.setAttribute("data-theme", dark ? "light" : "dark");
+  try { localStorage.setItem("theme", dark ? "light" : "dark"); } catch (e) {}
 });
 </script>
 </body>

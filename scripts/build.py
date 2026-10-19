@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Build index.html from content/site.json and templates/page.html. Standard library only.
+Usage: build.py [template.html] [output.html]   (defaults: page.html, index.html)
 
 Text fields in site.json may contain inline HTML (<em>, <strong>, <a>, entities); they are inserted as-is.
 """
@@ -70,7 +71,9 @@ def build(site):
 def main():
     site = json.loads((ROOT / "content" / "site.json").read_text(encoding="utf-8"))
     aff = site["affiliation"]
-    page = string.Template((ROOT / "templates" / "page.html").read_text(encoding="utf-8")).substitute(
+    template = sys.argv[1] if len(sys.argv) > 1 else "page.html"
+    target = ROOT / (sys.argv[2] if len(sys.argv) > 2 else "index.html")
+    page = string.Template((ROOT / "templates" / template).read_text(encoding="utf-8")).substitute(
         name=html.escape(site["name"]),
         title=html.escape(site["title"]),
         description=html.escape(site["description"], quote=True),
@@ -84,8 +87,8 @@ def main():
     bad = [w for w in FORBIDDEN if w in low]
     if bad:
         sys.exit(f"build refused: forbidden term(s) {bad} in output")
-    (ROOT / "index.html").write_text(page, encoding="utf-8")
-    print(f"index.html written ({len(page)} bytes)")
+    target.write_text(page, encoding="utf-8")
+    print(f"{target.name} written ({len(page)} bytes)")
 
 
 if __name__ == "__main__":
