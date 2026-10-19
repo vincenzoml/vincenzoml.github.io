@@ -157,14 +157,19 @@
       "text": "LLM-driven, multi-agent project management with software-engineering checks."
     },
     {
-      "name": "Anymatix",
-      "url": "https://anymatix.com",
-      "text": "Desktop application for local generative-AI workflows."
-    },
-    {
       "name": "Nearbytes",
       "url": "https://github.com/nearbytes",
       "text": "Local-first, friend-to-friend architecture for encrypted, collaborative data spaces (JLAMP 2026)."
+    },
+    {
+      "name": "topochecker",
+      "url": "https://github.com/vincenzoml/topochecker",
+      "text": "Spatio-temporal model checker on graphs and images; the predecessor of VoxLogicA."
+    },
+    {
+      "name": "VoxMinX",
+      "url": "https://github.com/VoxLogicA-Project/VoxMinX-Validation",
+      "text": "Toolchain for spatial model checking via model minimisation (FM 2023)."
     },
     {
       "name": "PeerFold",
@@ -172,14 +177,19 @@
       "text": "Native PDF review for referees and co-authors."
     },
     {
+      "name": "podman-minimal",
+      "url": "https://github.com/vincenzoml/podman-minimal",
+      "text": "Clean, throwaway development containers from any folder, with Dockerfile and devcontainer autodiscovery."
+    },
+    {
       "name": "ocamlfuse",
       "url": "https://github.com/astrada/ocamlfuse",
       "text": "OCaml bindings for FUSE (original author); still the FUSE layer of google-drive-ocamlfuse."
     },
     {
-      "name": "podman-minimal",
-      "url": "https://github.com/vincenzoml/podman-minimal",
-      "text": "Clean, throwaway development containers from any folder, with Dockerfile and devcontainer autodiscovery."
+      "name": "Anymatix",
+      "url": "https://anymatix.com",
+      "text": "Desktop application for local generative-AI workflows. A commercial product, not research software."
     }
   ],
   "projects": [
