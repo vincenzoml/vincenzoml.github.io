@@ -264,5 +264,27 @@
     "url": "https://github.com/vincenzoml?tab=repositories",
     "label": "More on GitHub",
     "text": "older tools, and new ones on the way."
-  }
+  },
+  "pub_links": [
+    {
+      "label": "DBLP",
+      "url": "https://dblp.org/search?q=Vincenzo+Ciancia"
+    },
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=MxkeE_AAAAAJ"
+    },
+    {
+      "label": "ORCID",
+      "url": "https://orcid.org/0000-0003-1314-0574"
+    },
+    {
+      "label": "arXiv",
+      "url": "https://arxiv.org/search/?searchtype=author&query=Ciancia%2C+Vincenzo"
+    },
+    {
+      "label": "ISTI Open Portal",
+      "url": "https://openportal.isti.cnr.it/results?qf=cnrautb&qv=Ciancia%2C%20Vincenzo&sort=date&order=1"
+    }
+  ]
 }

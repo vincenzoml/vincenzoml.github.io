@@ -46,6 +46,7 @@ def build(site):
             f'<br><span class="authors">{p["authors"]}</span><br><span class="venue">{p["venue"]}</span></span></li>'
         )
     out.append(section("publications", "Selected publications",
+                       '<ul class="chips">' + "".join(f"<li>{a(l['url'], l['label'])}</li>" for l in site.get("pub_links", [])) + '</ul>\n'
                        f'<p class="note">{site["publications_note"]}</p>\n<ol class="pubs">\n'
                        + "\n".join(pubs) + "\n</ol>"))
 
