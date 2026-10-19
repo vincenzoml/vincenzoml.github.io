@@ -29,7 +29,7 @@
       "id": "local-first-collaboration",
       "title": "Secure, local-first collaboration without central servers",
       "problem": "<strong>How can people share and edit data, including research data, while keeping it encrypted and under their own control?</strong> User interface, network protocols, cryptography and performance have to be <em>designed together</em>, because each one constrains the others.",
-      "doing": "<a href=\"https://github.com/nearbytes/community\"><strong>Nearbytes</strong></a>: a friend-to-friend architecture for encrypted, collaborative data spaces (JLAMP 2026)."
+      "doing": "<a href=\"https://github.com/nearbytes/community\"><strong>Nearbytes</strong></a>: a friend-to-friend architecture for encrypted, collaborative data spaces (<a href=\"https://doi.org/10.1016/j.jlamp.2026.101190\">JLAMP 2026</a>)."
     },
     {
       "id": "formally-guided-agents",
@@ -164,7 +164,7 @@
     {
       "name": "Nearbytes",
       "url": "https://github.com/nearbytes/community",
-      "text": "Local-first, friend-to-friend architecture for encrypted, collaborative data spaces (JLAMP 2026)."
+      "text": "Local-first, friend-to-friend architecture for encrypted, collaborative data spaces (<a href=\"https://doi.org/10.1016/j.jlamp.2026.101190\">JLAMP 2026</a>)."
     },
     {
       "name": "topochecker",
