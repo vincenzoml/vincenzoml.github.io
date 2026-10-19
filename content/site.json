@@ -3,14 +3,14 @@
   "title": "Senior Researcher (Primo Ricercatore), CNR-ISTI, Pisa",
   "affiliation": {
     "lab": "Formal Methods and Tools Laboratory",
-    "lab_url": "https://www.isti.cnr.it/en/research/laboratories/4/Formal_Methods_and_Tools_FMT",
+    "lab_url": "http://fmt.isti.cnr.it",
     "institute": "Institute of Information Science and Technologies “A. Faedo”, Consiglio Nazionale delle Ricerche",
     "institute_url": "https://www.isti.cnr.it/en/"
   },
   "description": "Vincenzo Ciancia, Senior Researcher at CNR-ISTI, Pisa: logic, formal verification and AI; spatial model checking for image analysis.",
   "profile": [
-    "I work on logic, formal verification and AI. My main research line is spatial model checking for image analysis, started in 2016 and developed in the VoxLogicA tools, from the underlying theory (spatial logics, bisimilarity, minimisation) to high-performance implementations and applications in medical imaging.",
-    "My current focus is AI that remains inspectable by people: hybrid AI with a strong symbolic component, and software developed by AI agents under formally grounded supervision."
+    "I work on logic, formal verification and AI. My main research line is spatial model checking for image analysis, started in 2016 and developed in the <a href=\"https://github.com/VoxLogicA-Project/VoxLogicA-2\">VoxLogicA</a> tools, from the underlying theory (spatial logics, bisimilarity, minimisation) to high-performance implementations and applications in medical imaging.",
+    "My current focus is AI that remains inspectable by people: hybrid AI with a strong symbolic component, and software developed by AI agents (<a href=\"https://vincenzoml.github.io/naima\">NAIMA</a>) under formally grounded supervision."
   ],
   "open_problems": [
     {
@@ -45,11 +45,11 @@
       "url": "https://www.anthropic.com/news/ai-for-science-program"
     },
     {
-      "text": "Program Chair, SPIN 2026, 32nd International Symposium on Model Checking of Software",
+      "text": "Program Chair, <a href=\"https://spin-web.github.io/SPIN2026/\">SPIN 2026</a>, 32nd International Symposium on Model Checking of Software",
       "year": "2026"
     },
     {
-      "text": "Satellite Events Chair, ETAPS 2026, European Joint Conferences on Theory and Practice of Software (Turin)",
+      "text": "Satellite Events Chair, <a href=\"https://etaps.org/2026/\">ETAPS 2026</a>, European Joint Conferences on Theory and Practice of Software (Turin)",
       "year": "2026"
     },
     {
@@ -67,7 +67,7 @@
       "url": "https://conf.researchr.org/program/spin-2021/program-spin-2021/"
     },
     {
-      "text": "Best presentation awards, CALCO 2019 and CALCO 2013 (Conference on Algebra and Coalgebra in Computer Science)",
+      "text": "Best presentation awards, CALCO 2019 and <a href=\"https://www.mimuw.edu.pl/~calco2013/\">CALCO 2013</a> (Conference on Algebra and Coalgebra in Computer Science)",
       "year": "2013–2019"
     }
   ],
@@ -204,7 +204,7 @@
   ],
   "projects": [
     {
-      "name": "THE – Tuscany Health Ecosystem",
+      "name": "<a href=\"https://www.tuscanyhealthecosystem.it/\">THE – Tuscany Health Ecosystem</a>",
       "funding": "EU NextGenerationEU / PNRR",
       "role": "task leader"
     },
@@ -220,7 +220,7 @@
     },
     {
       "name": "Earlier",
-      "funding": "EU FP7 QUANTICOL, ASCENS, NESSoS, ANIKETOS · EU FP6 SENSORIA · PRIN IT-MaTTerS",
+      "funding": "EU FP7 <a href=\"https://www.quanticol.eu/\">QUANTICOL</a>, <a href=\"http://www.ascens-ist.eu/\">ASCENS</a>, NESSoS, ANIKETOS · EU FP6 <a href=\"http://www.sensoria-ist.eu/\">SENSORIA</a> · <a href=\"http://itmatters.imtlucca.it/\">PRIN IT-MaTTerS</a>",
       "role": ""
     }
   ],
