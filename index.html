@@ -46,8 +46,6 @@ p { margin: 0 0 .9rem; }
 #open-problems h2 { grid-column: 1 / -1; margin-bottom: .4rem; }
 .problem { background: var(--soft); border: 1px solid var(--rule); border-radius: 14px; padding: 1.5rem 1.8rem 1.2rem; }
 h3 { font: 600 1.2rem/1.35 "Inter Tight", Inter, sans-serif; margin: 0 0 .9rem; }
-.num { display: block; font-size: .75rem; font-weight: 600; color: var(--accent); letter-spacing: .08em; margin-bottom: .4rem; }
-.num::before { content: "PROBLEM "; }
 .problem dl { margin: 0; display: grid; grid-template-columns: 9.5rem 1fr; gap: .55rem 1.5rem; max-width: 46rem; }
 .problem dt { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding-top: .25rem; }
 .problem dd { margin: 0; }
@@ -108,7 +106,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
 <section id="open-problems">
 <h2>Open problems I’m working on</h2>
 <article class="problem" id="agents-for-segmentation">
-<h3><span class="num">1</span>AI agents that produce new results in explainable image segmentation</h3>
+<h3>AI agents that produce new results in explainable image segmentation</h3>
 <dl>
 <dt>The problem</dt><dd>Can LLM agents contribute verifiable research progress in symbolic, explainable medical image segmentation?</dd>
 <dt>Why it is hard</dt><dd>Progress must be reproducible and must leave the segmentation procedure readable by a person, not only improve a score.</dd>
@@ -117,7 +115,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
 <p class="more"><a href="https://github.com/VoxLogicA-Project/VoxLogicA-2">VoxLogicA 2</a></p>
 </article>
 <article class="problem" id="verified-voxlogica">
-<h3><span class="num">2</span>A formally verified, high-performance spatial model checker</h3>
+<h3>A formally verified, high-performance spatial model checker</h3>
 <dl>
 <dt>The problem</dt><dd>Can an image-analysis engine that runs unattended for weeks be both fast and correct by construction?</dd>
 <dt>Why it is hard</dt><dd>Lazy parallel evaluation, caching and GPU kernels are where performance comes from, and also where errors hide; verification and performance engineering usually pull in opposite directions.</dd>
@@ -126,7 +124,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
 <p class="more"><a href="https://github.com/VoxLogicA-Project/VoxLogicA-2">VoxLogicA 2</a></p>
 </article>
 <article class="problem" id="local-first-collaboration">
-<h3><span class="num">3</span>Secure, local-first collaboration without central servers</h3>
+<h3>Secure, local-first collaboration without central servers</h3>
 <dl>
 <dt>The problem</dt><dd>How can people share and edit data together, including research data, while keeping it encrypted and under their own control?</dd>
 <dt>Why it is hard</dt><dd>It requires user interface, network protocols, cryptography and performance engineering to be designed together; each one constrains the others.</dd>
@@ -135,7 +133,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
 <p class="more"><a href="https://github.com/nearbytes">Nearbytes</a></p>
 </article>
 <article class="problem" id="formally-guided-agents">
-<h3><span class="num">4</span>Software developed by AI agents that can be trusted</h3>
+<h3>Software developed by AI agents that can be trusted</h3>
 <dl>
 <dt>The problem</dt><dd>How can large amounts of software produced by LLM agents be trusted when no person can read all of it?</dd>
 <dt>Why it is hard</dt><dd>Agents produce code faster than it can be reviewed; trust has to come from specifications, tests and a development process that the agents cannot bypass.</dd>

@@ -28,10 +28,10 @@ def build(site):
     out.append(section("about", "Profile", "\n".join(f"<p>{p}</p>" for p in site["profile"])))
 
     items = []
-    for n, op in enumerate(site["open_problems"], 1):
+    for op in site["open_problems"]:
         links = " · ".join(a(l["url"], l["label"]) for l in op["links"])
         items.append(
-            f'<article class="problem" id="{op["id"]}">\n<h3><span class="num">{n}</span>{op["title"]}</h3>\n<dl>\n'
+            f'<article class="problem" id="{op["id"]}">\n<h3>{op["title"]}</h3>\n<dl>\n'
             f'<dt>The problem</dt><dd>{op["problem"]}</dd>\n'
             f'<dt>Why it is hard</dt><dd>{op["why_hard"]}</dd>\n'
             f'<dt>What I am doing</dt><dd>{op["doing"]}</dd>\n</dl>\n'
