@@ -284,7 +284,11 @@
     },
     {
       "label": "ISTI Open Portal",
-      "url": "https://openportal.isti.cnr.it/results?qf=cnrautb&qv=Ciancia%2C%20Vincenzo&sort=date&order=1"
+      "url": "https://openportal.isti.cnr.it/results?page=1&pageSize=20&qf=&qv=ciancia%20vincenzo&cnrautb%5B%5D=Ciancia%2C%20Vincenzo&op_cnrautb=AND&op_type=OR&op_lng=OR&op_date=OR&op_rights=OR&sort=date&order=1"
+    },
+    {
+      "label": "IRIS CNR",
+      "url": "https://iris.cnr.it/cris/rp/rp05034"
     }
   ]
 }
