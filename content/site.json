@@ -7,121 +7,252 @@
     "institute": "Institute of Information Science and Technologies “A. Faedo”, Consiglio Nazionale delle Ricerche",
     "institute_url": "https://www.isti.cnr.it/en/"
   },
-  "description": "Vincenzo Ciancia — Senior Researcher at CNR-ISTI, Pisa. Logic, formal verification and AI: spatial model checking, explainable medical imaging, formally supervised AI agents.",
-
+  "description": "Vincenzo Ciancia, Senior Researcher at CNR-ISTI, Pisa: logic, formal verification and AI; spatial model checking for image analysis.",
   "profile": [
-    "I work where logic, formal verification and AI meet, with a focus on trustworthy AI that keeps a human in the loop.",
-    "I co-created <strong>spatial model checking for image analysis</strong>, a research line now in its tenth year, and have worked on all of it: metatheory (completeness, bisimilarity, minimisation), language design, high-performance execution (GPU kernels, lazy parallel evaluation, multi-level caching) and hybrid symbolic–neural AI, applied to medical imaging (brain tumours, acute ischemic stroke).",
-    "I work daily with frontier AI models and agents under formally grounded supervision, a method I turned into a tool, NAIMA. An Anthropic AI for Science Program award (2026) funds an ongoing experiment in which LLM agents produce new results in explainable, symbolic medical image segmentation.",
-    "About 1,700 citations and an h-index of 20 (Google Scholar, October 2026); our spatial logics and model checkers are cited by research groups in 16 countries."
+    "I work on logic, formal verification and AI. My main research line is spatial model checking for image analysis, started in 2016 and developed in the VoxLogicA tools, from the underlying theory (spatial logics, bisimilarity, minimisation) to high-performance implementations and applications in medical imaging.",
+    "My current focus is AI that remains inspectable by people: hybrid AI with a strong symbolic component, and software developed by AI agents under formally grounded supervision."
   ],
-
   "open_problems": [
     {
-      "id": "symbolic-segmentation",
-      "title": "Explainable, symbolic image segmentation as accurate as neural networks",
-      "problem": "Can segmentation procedures written as readable logical specifications match the accuracy of end-to-end neural networks on medical images?",
-      "why_hard": "Hand-written symbolic procedures have long trailed neural networks in accuracy, and the space of candidate programs is large; every improvement must keep the procedure inspectable and justified, not just better-scoring.",
-      "doing": "An LLM-agent research loop that I direct proposes, runs and refines segmentation programs in the declarative language of VoxLogicA 2, each with a stated rationale and versioned for reproducibility, on public brain-tumour benchmarks. This is hybrid AI with a strong symbolic component; it is funded by the Anthropic AI for Science Program (2026).",
+      "id": "agents-for-segmentation",
+      "title": "AI agents that produce new results in explainable image segmentation",
+      "problem": "Can LLM agents contribute verifiable research progress in symbolic, explainable medical image segmentation?",
+      "why_hard": "Progress must be reproducible and must leave the segmentation procedure readable by a person, not only improve a score.",
+      "doing": "An ongoing experiment supported by the <a href=\"https://www.anthropic.com/news/ai-for-science-program\">Anthropic AI for Science Program</a> (2026), built on VoxLogicA 2.",
       "links": [
-        {"label": "Artificial Intelligence in Medicine 2025", "url": "https://doi.org/10.1016/j.artmed.2025.103154"},
-        {"label": "VoxLogicA 2", "url": "https://github.com/VoxLogicA-Project/VoxLogicA-2"}
-      ]
-    },
-    {
-      "id": "parameters-without-oracle",
-      "title": "Choosing parameters without an oracle",
-      "problem": "How should the thresholds and parameters of a symbolic segmentation procedure be chosen when the ground truth of the image at hand is not available?",
-      "why_hard": "Accuracy reported with parameters tuned against ground truth is an upper bound, not a deployable result. Label-free selection criteria must be justified and must not leak information from the evaluation set.",
-      "doing": "I keep oracle-tuned and label-free results separate in every experiment, and I am studying selection criteria that depend only on the image and on properties stated in the logic.",
-      "links": [
-        {"label": "Artificial Intelligence in Medicine 2025", "url": "https://doi.org/10.1016/j.artmed.2025.103154"}
-      ]
-    },
-    {
-      "id": "compliant-by-construction",
-      "title": "Medical AI workflows that are compliant by construction",
-      "problem": "Can the transparency, traceability and human-oversight requirements of the EU AI Act be part of an executable specification of a clinical AI workflow, rather than documentation written afterwards?",
-      "why_hard": "Regulatory requirements are stated in legal language; workflows mix neural components, symbolic reasoning and human decisions, and the guarantees must hold for every execution.",
-      "doing": "A workflow language in which human assessment is a primitive and clinical protocols are encoded directly, so that compliance properties follow from the structure of the workflow (ISoLA 2026, to appear).",
-      "links": [
-        {"label": "ISoLA 2026 (to appear)", "url": "https://isola-conference.org/"}
-      ]
-    },
-    {
-      "id": "formally-guided-agents",
-      "title": "LLM agents guided by formal methods",
-      "problem": "How can large amounts of software produced by LLM agents be trusted when no human can read all of it?",
-      "why_hard": "Agents produce code faster than it can be reviewed; trust has to come from specifications, tests and process discipline that the agents themselves cannot bypass.",
-      "doing": "NAIMA, a fully automated, LLM-driven, parallel multi-agent project-management tool that applies established software-engineering practice and manages its own development. VoxLogicA 2 was written entirely by AI agents from a human-authored reference implementation used as an executable specification. Two publications in preparation.",
-      "links": [
-        {"label": "NAIMA", "url": "https://vincenzoml.github.io/naima"}
+        {
+          "label": "VoxLogicA 2",
+          "url": "https://github.com/VoxLogicA-Project/VoxLogicA-2"
+        }
       ]
     },
     {
       "id": "verified-voxlogica",
       "title": "A formally verified, high-performance spatial model checker",
       "problem": "Can an image-analysis engine that runs unattended for weeks be both fast and correct by construction?",
-      "why_hard": "Lazy parallel evaluation, caching and GPU kernels are where performance comes from and also where errors hide; verification and performance engineering usually pull in opposite directions.",
-      "doing": "VoxLogicA 2.1, built exclusively through NAIMA: its core is a formal model with automatically proved properties, from which high-performance implementations are derived.",
+      "why_hard": "Lazy parallel evaluation, caching and GPU kernels are where performance comes from, and also where errors hide; verification and performance engineering usually pull in opposite directions.",
+      "doing": "VoxLogicA 2.1: its core is a formal model with automatically proved properties, from which efficient implementations are derived.",
       "links": [
-        {"label": "VoxLogicA 2", "url": "https://github.com/VoxLogicA-Project/VoxLogicA-2"}
+        {
+          "label": "VoxLogicA 2",
+          "url": "https://github.com/VoxLogicA-Project/VoxLogicA-2"
+        }
+      ]
+    },
+    {
+      "id": "local-first-collaboration",
+      "title": "Secure, local-first collaboration without central servers",
+      "problem": "How can people share and edit data together, including research data, while keeping it encrypted and under their own control?",
+      "why_hard": "It requires user interface, network protocols, cryptography and performance engineering to be designed together; each one constrains the others.",
+      "doing": "Nearbytes, a friend-to-friend architecture for encrypted, collaborative data spaces (JLAMP 2026).",
+      "links": [
+        {
+          "label": "Nearbytes",
+          "url": "https://github.com/nearbytes"
+        }
       ]
     }
   ],
-
   "recognition": [
-    {"text": "Anthropic AI for Science Program award", "year": "2026"},
-    {"text": "Program Chair, SPIN 2026, 32nd International Symposium on Model Checking of Software", "year": "2026"},
-    {"text": "Satellite Events Chair, ETAPS 2026, European Joint Conferences on Theory and Practice of Software (Turin)", "year": "2026"},
-    {"text": "Invited contribution, FASE 2026 (ETAPS): <em>Model Checking in Space with Applications to Medical Image Analysis</em>", "year": "2026"},
-    {"text": "Best paper award, FORTE 2024 (DisCoTec 2024): <em>Weak Simplicial Bisimilarity for Polyhedral Models and SLCS&eta;</em>", "year": "2024", "url": "https://www.discotec.org/2024/#best-papers"},
-    {"text": "Invited speaker, SPIN 2021: <em>Spatial Model Checking and its Applications to Medical Image Analysis</em>", "year": "2021", "url": "https://conf.researchr.org/program/spin-2021/program-spin-2021/"},
-    {"text": "Best presentation awards, CALCO 2019 and CALCO 2013 (Conference on Algebra and Coalgebra in Computer Science)", "year": "2013–2019"},
-    {"text": "Program committees of 20+ international events, including COORDINATION, GandALF, QAPL and DataMod", "year": ""}
+    {
+      "text": "Anthropic AI for Science Program award",
+      "year": "2026",
+      "url": "https://www.anthropic.com/news/ai-for-science-program"
+    },
+    {
+      "text": "Program Chair, SPIN 2026, 32nd International Symposium on Model Checking of Software",
+      "year": "2026"
+    },
+    {
+      "text": "Satellite Events Chair, ETAPS 2026, European Joint Conferences on Theory and Practice of Software (Turin)",
+      "year": "2026"
+    },
+    {
+      "text": "Invited contribution, FASE 2026 (ETAPS): <em>Model Checking in Space with Applications to Medical Image Analysis</em>",
+      "year": "2026"
+    },
+    {
+      "text": "Best paper award, FORTE 2024 (DisCoTec 2024): <em>Weak Simplicial Bisimilarity for Polyhedral Models and SLCS&eta;</em>",
+      "year": "2024",
+      "url": "https://www.discotec.org/2024/#best-papers"
+    },
+    {
+      "text": "Invited speaker, SPIN 2021: <em>Spatial Model Checking and its Applications to Medical Image Analysis</em>",
+      "year": "2021",
+      "url": "https://conf.researchr.org/program/spin-2021/program-spin-2021/"
+    },
+    {
+      "text": "Best presentation awards, CALCO 2019 and CALCO 2013 (Conference on Algebra and Coalgebra in Computer Science)",
+      "year": "2013–2019"
+    }
   ],
-
-  "publications_note": "10 of 90 on DBLP. Authors are listed in alphabetical order in all our group’s publications unless noted.",
+  "publications_note": "Authors in alphabetical order unless noted. Full list on DBLP.",
   "publications": [
-    {"authors": "L. Bussi, V. Ciancia, F. Gadducci, M. Massink", "title": "Spatio-temporal Model Checking with VoxLogicA", "venue": "Journal of Logic, Language and Information 35(1–2):83–108", "year": 2026, "url": "https://doi.org/10.1007/s10849-026-09476-w"},
-    {"authors": "N. Bezhanishvili, L. Bussi, V. Ciancia, D. Gabelaia, M. Jibladze, D. Latella, M. Massink, E. P. de Vink", "title": "Weak Simplicial Bisimilarity and Minimisation for Polyhedral Model Checking", "venue": "Logical Methods in Computer Science 22(1)", "year": 2026, "url": "https://doi.org/10.46298/lmcs-22(1:6)2026"},
-    {"authors": "M. Imbriani, G. Belmonte, M. Massink, A. Tofani, V. Ciancia", "title": "A Multi-Resolution Benchmark Framework for Spatial Reasoning Assessment in Neural Networks", "venue": "arXiv:2508.12741 (author order by contribution)", "year": 2025, "url": "https://doi.org/10.48550/arXiv.2508.12741"},
-    {"authors": "G. Belmonte, V. Ciancia, M. Massink", "title": "Symbolic and hybrid AI for brain tissue segmentation using spatial model checking", "venue": "Artificial Intelligence in Medicine 167:103154", "year": 2025, "url": "https://doi.org/10.1016/j.artmed.2025.103154"},
-    {"authors": "G. Belmonte, L. Bussi, V. Ciancia, D. Latella, M. Massink", "title": "Towards Hybrid-AI in Imaging Using VoxLogicA", "venue": "ISoLA 2024, LNCS, pp. 205–221", "year": 2024, "url": "https://doi.org/10.1007/978-3-031-75387-9_13"},
-    {"authors": "N. Bezhanishvili, L. Bussi, V. Ciancia, D. Fernández-Duque, D. Gabelaia", "title": "Logics of Polyhedral Reachability", "venue": "Advances in Modal Logic (AiML 2024), vol. 15, pp. 187–204", "year": 2024, "url": "http://www.aiml.net/volumes/volume15/09-BezhanishviliBussiEtAl.pdf"},
-    {"authors": "N. Bezhanishvili, V. Ciancia, D. Gabelaia, M. Jibladze, D. Latella, M. Massink, E. P. de Vink", "title": "Weak Simplicial Bisimilarity for Polyhedral Models and SLCS&eta;", "venue": "FORTE 2024, LNCS, pp. 20–38", "year": 2024, "url": "https://doi.org/10.1007/978-3-031-62645-6_2", "badge": "Best paper award"},
-    {"authors": "V. Ciancia, J. F. Groote, D. Latella, M. Massink, E. P. de Vink", "title": "Minimisation of Spatial Models Using Branching Bisimilarity", "venue": "FM 2023, LNCS, pp. 263–281", "year": 2023, "url": "https://doi.org/10.1007/978-3-031-27481-7_16"},
-    {"authors": "L. Bussi, V. Ciancia, F. Gadducci", "title": "Towards a Spatial Model Checker on GPU", "venue": "FORTE 2021, LNCS, pp. 188–196", "year": 2021, "url": "https://doi.org/10.1007/978-3-030-78089-0_12"},
-    {"authors": "G. Belmonte, V. Ciancia, D. Latella, M. Massink", "title": "VoxLogicA: A Spatial Model Checker for Declarative Image Analysis", "venue": "TACAS 2019, LNCS, pp. 281–298", "year": 2019, "url": "https://doi.org/10.1007/978-3-030-17462-0_16"}
+    {
+      "authors": "L. Bussi, V. Ciancia, F. Gadducci, M. Massink",
+      "title": "Spatio-temporal Model Checking with VoxLogicA",
+      "venue": "Journal of Logic, Language and Information 35(1–2):83–108",
+      "year": 2026,
+      "url": "https://doi.org/10.1007/s10849-026-09476-w"
+    },
+    {
+      "authors": "N. Bezhanishvili, L. Bussi, V. Ciancia, D. Gabelaia, M. Jibladze, D. Latella, M. Massink, E. P. de Vink",
+      "title": "Weak Simplicial Bisimilarity and Minimisation for Polyhedral Model Checking",
+      "venue": "Logical Methods in Computer Science 22(1)",
+      "year": 2026,
+      "url": "https://doi.org/10.46298/lmcs-22(1:6)2026"
+    },
+    {
+      "authors": "M. Imbriani, G. Belmonte, M. Massink, A. Tofani, V. Ciancia",
+      "title": "A Multi-Resolution Benchmark Framework for Spatial Reasoning Assessment in Neural Networks",
+      "venue": "arXiv:2508.12741 (author order by contribution)",
+      "year": 2025,
+      "url": "https://doi.org/10.48550/arXiv.2508.12741"
+    },
+    {
+      "authors": "G. Belmonte, V. Ciancia, M. Massink",
+      "title": "Symbolic and hybrid AI for brain tissue segmentation using spatial model checking",
+      "venue": "Artificial Intelligence in Medicine 167:103154",
+      "year": 2025,
+      "url": "https://doi.org/10.1016/j.artmed.2025.103154"
+    },
+    {
+      "authors": "G. Belmonte, L. Bussi, V. Ciancia, D. Latella, M. Massink",
+      "title": "Towards Hybrid-AI in Imaging Using VoxLogicA",
+      "venue": "ISoLA 2024, LNCS, pp. 205–221",
+      "year": 2024,
+      "url": "https://doi.org/10.1007/978-3-031-75387-9_13"
+    },
+    {
+      "authors": "N. Bezhanishvili, L. Bussi, V. Ciancia, D. Fernández-Duque, D. Gabelaia",
+      "title": "Logics of Polyhedral Reachability",
+      "venue": "Advances in Modal Logic (AiML 2024), vol. 15, pp. 187–204",
+      "year": 2024,
+      "url": "http://www.aiml.net/volumes/volume15/09-BezhanishviliBussiEtAl.pdf"
+    },
+    {
+      "authors": "N. Bezhanishvili, V. Ciancia, D. Gabelaia, M. Jibladze, D. Latella, M. Massink, E. P. de Vink",
+      "title": "Weak Simplicial Bisimilarity for Polyhedral Models and SLCS&eta;",
+      "venue": "FORTE 2024, LNCS, pp. 20–38",
+      "year": 2024,
+      "url": "https://doi.org/10.1007/978-3-031-62645-6_2",
+      "badge": "Best paper award"
+    },
+    {
+      "authors": "V. Ciancia, J. F. Groote, D. Latella, M. Massink, E. P. de Vink",
+      "title": "Minimisation of Spatial Models Using Branching Bisimilarity",
+      "venue": "FM 2023, LNCS, pp. 263–281",
+      "year": 2023,
+      "url": "https://doi.org/10.1007/978-3-031-27481-7_16"
+    },
+    {
+      "authors": "L. Bussi, V. Ciancia, F. Gadducci",
+      "title": "Towards a Spatial Model Checker on GPU",
+      "venue": "FORTE 2021, LNCS, pp. 188–196",
+      "year": 2021,
+      "url": "https://doi.org/10.1007/978-3-030-78089-0_12"
+    },
+    {
+      "authors": "G. Belmonte, V. Ciancia, D. Latella, M. Massink",
+      "title": "VoxLogicA: A Spatial Model Checker for Declarative Image Analysis",
+      "venue": "TACAS 2019, LNCS, pp. 281–298",
+      "year": 2019,
+      "url": "https://doi.org/10.1007/978-3-030-17462-0_16"
+    }
   ],
-
   "software": [
-    {"name": "VoxLogicA 2", "url": "https://github.com/VoxLogicA-Project/VoxLogicA-2", "text": "Spatial model checking for 2D/3D medical images at dataset scale, built by supervised AI agents. VoxLogicA 2.1 (in progress) has a formally modelled, verified core. The original VoxLogicA is <a href=\"https://github.com/vincenzoml/VoxLogicA\">here</a>."},
-    {"name": "NAIMA", "url": "https://vincenzoml.github.io/naima", "text": "A fully automated, LLM-driven, multi-agent project-management tool that applies software-engineering practice and manages its own development."},
-    {"name": "Anymatix", "url": "https://anymatix.com", "text": "Desktop application for local generative-AI workflows, built with supervised agents (founder, developer)."},
-    {"name": "Nearbytes", "url": "https://github.com/nearbytes", "text": "Local-first, friend-to-friend architecture for encrypted, collaborative data spaces (JLAMP 2026)."},
-    {"name": "PeerFold", "url": "https://github.com/vincenzoml/PeerFold", "text": "Native PDF review for referees and co-authors."},
-    {"name": "ocamlfuse", "url": "https://github.com/astrada/ocamlfuse", "text": "OCaml bindings for FUSE (original author); still the FUSE layer of google-drive-ocamlfuse."}
+    {
+      "name": "VoxLogicA 2",
+      "url": "https://github.com/VoxLogicA-Project/VoxLogicA-2",
+      "text": "Spatial model checking for 2D/3D medical images at dataset scale. The original VoxLogicA is <a href=\"https://github.com/vincenzoml/VoxLogicA\">here</a>."
+    },
+    {
+      "name": "NAIMA",
+      "url": "https://vincenzoml.github.io/naima",
+      "text": "LLM-driven, multi-agent project management with software-engineering checks."
+    },
+    {
+      "name": "Anymatix",
+      "url": "https://anymatix.com",
+      "text": "Desktop application for local generative-AI workflows."
+    },
+    {
+      "name": "Nearbytes",
+      "url": "https://github.com/nearbytes",
+      "text": "Local-first, friend-to-friend architecture for encrypted, collaborative data spaces (JLAMP 2026)."
+    },
+    {
+      "name": "PeerFold",
+      "url": "https://github.com/vincenzoml/PeerFold",
+      "text": "Native PDF review for referees and co-authors."
+    },
+    {
+      "name": "ocamlfuse",
+      "url": "https://github.com/astrada/ocamlfuse",
+      "text": "OCaml bindings for FUSE (original author); still the FUSE layer of google-drive-ocamlfuse."
+    },
+    {
+      "name": "podman-minimal",
+      "url": "https://github.com/vincenzoml/podman-minimal",
+      "text": "Clean, throwaway development containers from any folder, with Dockerfile and devcontainer autodiscovery."
+    }
   ],
-
   "projects": [
-    {"name": "THE – Tuscany Health Ecosystem", "funding": "EU NextGenerationEU / PNRR", "role": "task leader"},
-    {"name": "PRIN STENDHAL", "funding": "spatio-temporal enhancement of neural networks", "role": "head of the CNR research unit"},
-    {"name": "Model Checking for Polyhedral Logics", "funding": "CNR–SRNSF bilateral project", "role": "co-PI"},
-    {"name": "Earlier", "funding": "EU FP7 QUANTICOL, ASCENS, NESSoS, ANIKETOS · EU FP6 SENSORIA · PRIN IT-MaTTerS", "role": ""}
+    {
+      "name": "THE – Tuscany Health Ecosystem",
+      "funding": "EU NextGenerationEU / PNRR",
+      "role": "task leader"
+    },
+    {
+      "name": "PRIN STENDHAL",
+      "funding": "spatio-temporal enhancement of neural networks",
+      "role": "head of the CNR research unit"
+    },
+    {
+      "name": "Model Checking for Polyhedral Logics",
+      "funding": "CNR–SRNSF bilateral project",
+      "role": "co-PI"
+    },
+    {
+      "name": "Earlier",
+      "funding": "EU FP7 QUANTICOL, ASCENS, NESSoS, ANIKETOS · EU FP6 SENSORIA · PRIN IT-MaTTerS",
+      "role": ""
+    }
   ],
-
   "links": [
-    {"label": "DBLP", "url": "https://dblp.org/search?q=Vincenzo+Ciancia"},
-    {"label": "Google Scholar", "url": "https://scholar.google.com/citations?user=MxkeE_AAAAAJ"},
-    {"label": "ORCID 0000-0003-1314-0574", "url": "https://orcid.org/0000-0003-1314-0574"}
+    {
+      "label": "DBLP",
+      "url": "https://dblp.org/search?q=Vincenzo+Ciancia"
+    },
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=MxkeE_AAAAAJ"
+    },
+    {
+      "label": "ORCID",
+      "url": "https://orcid.org/0000-0003-1314-0574"
+    },
+    {
+      "label": "CNR-ISTI",
+      "url": "https://www.isti.cnr.it/People/V.Ciancia"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/vincenzoml"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/vincenzo-ciancia-2032445/"
+    }
   ],
-
   "contacts": [
-    {"label": "vincenzo.ciancia@isti.cnr.it", "url": "mailto:vincenzo.ciancia@isti.cnr.it"},
-    {"label": "vincenzoml@gmail.com", "url": "mailto:vincenzoml@gmail.com"},
-    {"label": "GitHub", "url": "https://github.com/vincenzoml"},
-    {"label": "LinkedIn", "url": "https://www.linkedin.com/in/vincenzo-ciancia-2032445/"},
-    {"label": "CNR-ISTI page", "url": "https://www.isti.cnr.it/People/V.Ciancia"}
+    {
+      "label": "vincenzo.ciancia@isti.cnr.it",
+      "url": "mailto:vincenzo.ciancia@isti.cnr.it"
+    },
+    {
+      "label": "vincenzoml@gmail.com",
+      "url": "mailto:vincenzoml@gmail.com"
+    }
   ]
 }

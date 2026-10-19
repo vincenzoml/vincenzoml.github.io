@@ -27,10 +27,10 @@ def build(site):
     out.append(section("about", "Profile", "\n".join(f"<p>{p}</p>" for p in site["profile"])))
 
     items = []
-    for op in site["open_problems"]:
+    for n, op in enumerate(site["open_problems"], 1):
         links = " · ".join(a(l["url"], l["label"]) for l in op["links"])
         items.append(
-            f'<article class="problem" id="{op["id"]}">\n<h3>{op["title"]}</h3>\n<dl>\n'
+            f'<article class="problem" id="{op["id"]}">\n<h3><span class="num">{n}</span>{op["title"]}</h3>\n<dl>\n'
             f'<dt>The problem</dt><dd>{op["problem"]}</dd>\n'
             f'<dt>Why it is hard</dt><dd>{op["why_hard"]}</dd>\n'
             f'<dt>What I am doing</dt><dd>{op["doing"]}</dd>\n</dl>\n'
@@ -38,24 +38,22 @@ def build(site):
         )
     out.append(section("open-problems", "Open problems I’m working on", "\n".join(items)))
 
-    rec = []
-    for r in site["recognition"]:
-        text = a(r["url"], r["text"]) if r.get("url") else r["text"]
-        year = f'<span class="year">{r["year"]}</span> — ' if r.get("year") else ""
-        rec.append(f"<li>{year}{text}</li>")
-    out.append(section("recognition", "Recognition and service", '<ul class="plain">\n' + "\n".join(rec) + "\n</ul>"))
-
     pubs = []
     for p in site["publications"]:
         badge = f'<span class="badge">{p["badge"]}</span>' if p.get("badge") else ""
         pubs.append(
-            f'<li>{p["authors"]}. <a class="pub-title" href="{html.escape(p["url"], quote=True)}">{p["title"]}</a>. '
-            f'{p["venue"]}, <span class="year">{p["year"]}</span>.{badge}</li>'
+            f'<li><span class="year">{p["year"]}</span><span><a class="pub-title" href="{html.escape(p["url"], quote=True)}">{p["title"]}</a>{badge}'
+            f'<br><span class="authors">{p["authors"]}</span><br><span class="venue">{p["venue"]}</span></span></li>'
         )
-    links = '<p class="linkrow">' + "".join(a(l["url"], l["label"]) for l in site["links"]) + "</p>"
     out.append(section("publications", "Selected publications",
                        f'<p class="note">{site["publications_note"]}</p>\n<ol class="pubs">\n'
-                       + "\n".join(pubs) + "\n</ol>\n" + links))
+                       + "\n".join(pubs) + "\n</ol>"))
+
+    rec = []
+    for r in site["recognition"]:
+        text = a(r["url"], r["text"]) if r.get("url") else r["text"]
+        rec.append(f'<li><span class="year">{r.get("year", "")}</span><span>{text}</span></li>')
+    out.append(section("recognition", "Recognition and service", '<ul class="plain">\n' + "\n".join(rec) + "\n</ul>"))
 
     sw = [f'<li>{a(s["url"], "<strong>" + s["name"] + "</strong>")} — {s["text"]}</li>' for s in site["software"]]
     out.append(section("software", "Software", '<ul class="plain">\n' + "\n".join(sw) + "\n</ul>"))
@@ -66,8 +64,6 @@ def build(site):
         pr.append(f'<li><strong>{p["name"]}</strong>, {p["funding"]}{role}</li>')
     out.append(section("projects", "Projects", '<ul class="plain">\n' + "\n".join(pr) + "\n</ul>"))
 
-    ct = '<p class="linkrow">' + "".join(a(c["url"], c["label"]) for c in site["contacts"]) + "</p>"
-    out.append(section("contact", "Contact", ct))
     return "\n\n".join(out)
 
 
@@ -80,6 +76,8 @@ def main():
         description=html.escape(site["description"], quote=True),
         affiliation=f'{a(aff["lab_url"], aff["lab"])}, {a(aff["institute_url"], aff["institute"])}',
         body=build(site),
+        links="\n".join(f"<li>{a(l['url'], l['label'])}</li>" for l in site["links"]),
+        contacts="\n".join(f"<li>{a(c['url'], c['label'])}</li>" for c in site["contacts"]),
         updated=datetime.date.today().strftime("%-d %B %Y"),
     )
     low = page.lower()

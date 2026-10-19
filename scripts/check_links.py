@@ -22,6 +22,8 @@ class Links(html.parser.HTMLParser):
         self.urls = []
 
     def handle_starttag(self, tag, attrs):
+        if tag != "a":
+            return
         for k, v in attrs:
             if k == "href" and v and v.startswith(("http://", "https://")):
                 self.urls.append(v)
