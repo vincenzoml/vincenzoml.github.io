@@ -56,6 +56,10 @@ def build(site):
     out.append(section("recognition", "Recognition and service", '<ul class="plain">\n' + "\n".join(rec) + "\n</ul>"))
 
     sw = [f'<li>{a(s["url"], "<strong>" + s["name"] + "</strong>")} — {s["text"]}</li>' for s in site["software"]]
+    if site.get("software_more"):
+        m = site["software_more"]
+        sw.append(f'<li class="sw-more"><span class="dots" aria-hidden="true">···</span>'
+                  f'{a(m["url"], "<strong>" + m["label"] + "</strong>")} — {m["text"]}</li>')
     out.append(section("software", "Software", '<ul class="plain">\n' + "\n".join(sw) + "\n</ul>"))
 
     pr = []

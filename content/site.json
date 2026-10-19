@@ -259,5 +259,10 @@
       "label": "vincenzoml@gmail.com",
       "url": "mailto:vincenzoml@gmail.com"
     }
-  ]
+  ],
+  "software_more": {
+    "url": "https://github.com/vincenzoml?tab=repositories",
+    "label": "More on GitHub",
+    "text": "older tools, and new ones on the way."
+  }
 }
