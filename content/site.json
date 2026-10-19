@@ -152,6 +152,11 @@
       "text": "Spatial model checking for 2D/3D medical images at dataset scale. The original VoxLogicA is <a href=\"https://github.com/vincenzoml/VoxLogicA\">here</a>."
     },
     {
+      "name": "VoxLogicA-UI",
+      "url": "https://github.com/VoxLogicA-Project/VoxLogicA-UI",
+      "text": "Web interface for VoxLogicA."
+    },
+    {
       "name": "NAIMA",
       "url": "https://vincenzoml.github.io/naima",
       "text": "LLM-driven, multi-agent project management with software-engineering checks."
@@ -185,6 +190,11 @@
       "name": "ocamlfuse",
       "url": "https://github.com/astrada/ocamlfuse",
       "text": "OCaml bindings for FUSE (original author); still the FUSE layer of google-drive-ocamlfuse."
+    },
+    {
+      "name": "claude-switcher",
+      "url": "https://github.com/make-become/claude-switcher",
+      "text": "Several Claude Desktop accounts side by side on one Mac (unofficial)."
     },
     {
       "name": "Anymatix",
