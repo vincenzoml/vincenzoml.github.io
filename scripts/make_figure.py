@@ -77,15 +77,11 @@ svg = f'''<svg class="figure" viewBox="0 0 {W} {H}" role="img" aria-labelledby="
 .figure .seg {{ transform-box: fill-box; transform-origin: center; }}
 @media (prefers-reduced-motion: reduce) {{ .figure .seg {{ animation: none; opacity: .92; }} }}
 </style>
-<text x="{OX}" y="{OY - 4}" class="lbl">IMAGE</text>
 {chr(10).join(out)}
-<text x="{fx}" y="{OY - 4}" class="lbl">SPECIFICATION</text>
 <rect x="{fx}" y="{OY + 30}" width="290" height="118" rx="10" fill="var(--soft)" stroke="var(--rule)"/>
 {chr(10).join(lines)}
 <path d="M {fx - 4} {OY + 89} C {fx - 22} {OY + 89}, {fx - 18} {OY + 105}, {OX + grid_w - 6} {OY + 105}" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="3 4"/>
-<text x="{fx}" y="{OY + 186}" class="lbl">EVERY COLOURED VOXEL HAS A REASON</text>
-<text x="{fx}" y="{OY + 206}" class="code" fill="var(--muted)" font-size="12">readable · checkable · reproducible</text>
-<g transform="translate({fx} {OY + 236})" class="code" font-size="12">
+<g transform="translate({fx + 18} {OY + 168})" class="code" font-size="12">
   <rect width="11" height="11" rx="2.5" fill="var(--accent)"/><text x="18" y="10" fill="var(--fg)">core</text>
   <rect x="70" width="11" height="11" rx="2.5" fill="var(--accent2)"/><text x="88" y="10" fill="var(--fg)">edema</text>
 </g>
