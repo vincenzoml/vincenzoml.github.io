@@ -17,49 +17,25 @@
       "id": "agents-for-segmentation",
       "title": "AI agents that produce new results in explainable image segmentation",
       "problem": "<strong>Can LLM agents produce real research progress in symbolic, explainable medical image segmentation?</strong> Progress counts only if it is <em>reproducible</em> and the procedure stays <em>readable by a person</em>; a better score is not enough.",
-      "doing": "An ongoing experiment supported by the <a href=\"https://www.anthropic.com/news/ai-for-science-program\">Anthropic AI for Science Program</a> (2026), built on <strong>VoxLogicA 2</strong>.",
-      "links": [
-        {
-          "label": "VoxLogicA 2",
-          "url": "https://github.com/VoxLogicA-Project/VoxLogicA-2"
-        }
-      ]
+      "doing": "An ongoing experiment supported by the <a href=\"https://www.anthropic.com/news/ai-for-science-program\">Anthropic AI for Science Program</a> (2026), built on <a href=\"https://github.com/VoxLogicA-Project/VoxLogicA-2\"><strong>VoxLogicA 2</strong></a>."
     },
     {
       "id": "verified-voxlogica",
       "title": "A formally verified, high-performance spatial model checker",
       "problem": "<strong>Can an image-analysis engine that runs unattended for weeks be both fast and correct by construction?</strong> Lazy parallel evaluation, caching and GPU kernels are where <em>performance</em> comes from, and also where <em>errors</em> hide.",
-      "doing": "<strong>VoxLogicA 2.1</strong>: the core is a formal model with automatically proved properties, and efficient implementations are derived from it.",
-      "links": [
-        {
-          "label": "VoxLogicA 2",
-          "url": "https://github.com/VoxLogicA-Project/VoxLogicA-2"
-        }
-      ]
+      "doing": "<a href=\"https://github.com/VoxLogicA-Project/VoxLogicA-2\"><strong>VoxLogicA 2.1</strong></a>: the core is a formal model with automatically proved properties, and efficient implementations are derived from it."
     },
     {
       "id": "local-first-collaboration",
       "title": "Secure, local-first collaboration without central servers",
       "problem": "<strong>How can people share and edit data, including research data, while keeping it encrypted and under their own control?</strong> User interface, network protocols, cryptography and performance have to be <em>designed together</em>, because each one constrains the others.",
-      "doing": "<strong>Nearbytes</strong>: a friend-to-friend architecture for encrypted, collaborative data spaces (JLAMP 2026).",
-      "links": [
-        {
-          "label": "Nearbytes",
-          "url": "https://github.com/nearbytes"
-        }
-      ]
+      "doing": "<a href=\"https://github.com/nearbytes\"><strong>Nearbytes</strong></a>: a friend-to-friend architecture for encrypted, collaborative data spaces (JLAMP 2026)."
     },
     {
       "id": "formally-guided-agents",
       "title": "Software developed by AI agents that can be trusted",
       "problem": "<strong>How can software written by AI agents be trusted when no person can read all of it?</strong> Agents write code faster than it can be reviewed, so trust has to come from <em>specifications, tests and a process</em> that the agents cannot bypass.",
-      "doing": "<strong>NAIMA</strong>: an LLM-driven, multi-agent project-management tool that enforces software-engineering checks; it develops itself and VoxLogicA 2.1.",
-      "links": [
-        {
-          "label": "NAIMA",
-          "url": "https://vincenzoml.github.io/naima"
-        }
-      ]
+      "doing": "<a href=\"https://vincenzoml.github.io/naima\"><strong>NAIMA</strong></a>: an LLM-driven, multi-agent project-management tool that enforces software-engineering checks; it develops itself and VoxLogicA 2.1."
     }
   ],
   "recognition": [

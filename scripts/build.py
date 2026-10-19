@@ -30,12 +30,11 @@ def build(site):
 
     items = []
     for op in site["open_problems"]:
-        links = " · ".join(a(l["url"], l["label"]) for l in op["links"])
         items.append(
             f'<article class="problem" id="{op["id"]}">\n<h3>{op["title"]}</h3>\n'
             f'<p class="q">{op["problem"]}</p>\n'
             f'<p class="doing">{op["doing"]}</p>\n'
-            f'<p class="more">{links}</p>\n</article>'
+            '</article>'
         )
     out.append(section("open-problems", "Open problems I’m working on", "\n".join(items)))
 
