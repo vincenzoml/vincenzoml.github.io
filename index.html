@@ -47,9 +47,12 @@ p { margin: 0 0 .9rem; }
 #open-problems h2 { grid-column: 1 / -1; margin-bottom: .4rem; }
 .problem { background: var(--soft); border: 1px solid var(--rule); border-radius: 18px; box-shadow: 0 1px 2px rgb(20 20 40 / .04), 0 8px 24px -12px rgb(60 40 160 / .12); padding: 1.5rem 1.8rem 1.2rem; }
 h3 { font: 600 1.2rem/1.35 "Inter Tight", Inter, sans-serif; margin: 0 0 .9rem; }
-.problem dl { margin: 0; }
-.problem dt { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-top: .8rem; }
-.problem dd { margin: 0; }
+.problem p { margin: 0; }
+.problem .q { color: var(--muted); }
+.problem .q strong { display: block; color: var(--fg); font-weight: 600; font-size: 1.04rem; line-height: 1.5; margin-bottom: .45rem; }
+.problem em { font-style: normal; color: var(--accent); font-weight: 500; }
+.problem .doing { margin-top: 1.5rem; }
+.problem .doing strong { color: var(--accent); font-weight: 600; }
 .problem .more { margin: 1rem 0 0; font-size: .88rem; font-weight: 500; }
 ul.plain, ol.pubs { list-style: none; padding: 0; margin: 0; }
 ul.plain li, ol.pubs li { padding: .7rem 0; border-bottom: 1px solid var(--rule); }
@@ -299,38 +302,26 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
 <h2>Open problems I’m working on</h2>
 <article class="problem" id="agents-for-segmentation">
 <h3>AI agents that produce new results in explainable image segmentation</h3>
-<dl>
-<dt>The problem</dt><dd>Can LLM agents contribute verifiable research progress in symbolic, explainable medical image segmentation?</dd>
-<dt>Why it is hard</dt><dd>Progress must be reproducible and must leave the segmentation procedure readable by a person, not only improve a score.</dd>
-<dt>What I am doing</dt><dd>An ongoing experiment supported by the <a href="https://www.anthropic.com/news/ai-for-science-program">Anthropic AI for Science Program</a> (2026), built on VoxLogicA 2.</dd>
-</dl>
+<p class="q"><strong>Can LLM agents produce real research progress in symbolic, explainable medical image segmentation?</strong> Progress counts only if it is <em>reproducible</em> and the procedure stays <em>readable by a person</em>; a better score is not enough.</p>
+<p class="doing">An ongoing experiment supported by the <a href="https://www.anthropic.com/news/ai-for-science-program">Anthropic AI for Science Program</a> (2026), built on <strong>VoxLogicA 2</strong>.</p>
 <p class="more"><a href="https://github.com/VoxLogicA-Project/VoxLogicA-2">VoxLogicA 2</a></p>
 </article>
 <article class="problem" id="verified-voxlogica">
 <h3>A formally verified, high-performance spatial model checker</h3>
-<dl>
-<dt>The problem</dt><dd>Can an image-analysis engine that runs unattended for weeks be both fast and correct by construction?</dd>
-<dt>Why it is hard</dt><dd>Lazy parallel evaluation, caching and GPU kernels are where performance comes from, and also where errors hide; verification and performance engineering usually pull in opposite directions.</dd>
-<dt>What I am doing</dt><dd>VoxLogicA 2.1: its core is a formal model with automatically proved properties, from which efficient implementations are derived.</dd>
-</dl>
+<p class="q"><strong>Can an image-analysis engine that runs unattended for weeks be both fast and correct by construction?</strong> Lazy parallel evaluation, caching and GPU kernels are where <em>performance</em> comes from, and also where <em>errors</em> hide.</p>
+<p class="doing"><strong>VoxLogicA 2.1</strong>: the core is a formal model with automatically proved properties, and efficient implementations are derived from it.</p>
 <p class="more"><a href="https://github.com/VoxLogicA-Project/VoxLogicA-2">VoxLogicA 2</a></p>
 </article>
 <article class="problem" id="local-first-collaboration">
 <h3>Secure, local-first collaboration without central servers</h3>
-<dl>
-<dt>The problem</dt><dd>How can people share and edit data together, including research data, while keeping it encrypted and under their own control?</dd>
-<dt>Why it is hard</dt><dd>It requires user interface, network protocols, cryptography and performance engineering to be designed together; each one constrains the others.</dd>
-<dt>What I am doing</dt><dd>Nearbytes, a friend-to-friend architecture for encrypted, collaborative data spaces (JLAMP 2026).</dd>
-</dl>
+<p class="q"><strong>How can people share and edit data, including research data, while keeping it encrypted and under their own control?</strong> User interface, network protocols, cryptography and performance have to be <em>designed together</em>, because each one constrains the others.</p>
+<p class="doing"><strong>Nearbytes</strong>: a friend-to-friend architecture for encrypted, collaborative data spaces (JLAMP 2026).</p>
 <p class="more"><a href="https://github.com/nearbytes">Nearbytes</a></p>
 </article>
 <article class="problem" id="formally-guided-agents">
 <h3>Software developed by AI agents that can be trusted</h3>
-<dl>
-<dt>The problem</dt><dd>How can large amounts of software produced by LLM agents be trusted when no person can read all of it?</dd>
-<dt>Why it is hard</dt><dd>Agents produce code faster than it can be reviewed; trust has to come from specifications, tests and a development process that the agents cannot bypass.</dd>
-<dt>What I am doing</dt><dd>NAIMA, an LLM-driven, multi-agent project-management tool that enforces software-engineering checks and is used to develop itself and VoxLogicA 2.1.</dd>
-</dl>
+<p class="q"><strong>How can software written by AI agents be trusted when no person can read all of it?</strong> Agents write code faster than it can be reviewed, so trust has to come from <em>specifications, tests and a process</em> that the agents cannot bypass.</p>
+<p class="doing"><strong>NAIMA</strong>: an LLM-driven, multi-agent project-management tool that enforces software-engineering checks; it develops itself and VoxLogicA 2.1.</p>
 <p class="more"><a href="https://vincenzoml.github.io/naima">NAIMA</a></p>
 </article>
 </section>
