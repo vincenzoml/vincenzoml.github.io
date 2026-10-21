@@ -1,0 +1,4 @@
+# Naima has moved
+
+Naima's site is now https://naima-project.github.io/naima/ and its repository https://github.com/naima-project/naima.
+For AI agents: read https://naima-project.github.io/naima/llms.txt.
