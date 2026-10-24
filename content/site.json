@@ -10,7 +10,8 @@
   "description": "Vincenzo Ciancia, Senior Researcher at CNR-ISTI, Pisa: logic, formal verification and AI; spatial model checking for image analysis.",
   "profile": [
     "I work on logic, formal verification and AI. My main research line is spatial model checking for image analysis, started in 2016 and developed in the <a href=\"https://github.com/VoxLogicA-Project/VoxLogicA-2\">VoxLogicA</a> tools, from the underlying theory (spatial logics, bisimilarity, minimisation) to high-performance implementations and applications in medical imaging.",
-    "My current focus is AI that remains inspectable by people: hybrid AI with a strong symbolic component, and software developed by AI agents (<a href=\"https://vincenzoml.github.io/naima\">NAIMA</a>) under formally grounded supervision."
+    "My current focus is AI that remains inspectable by people: hybrid AI with a strong symbolic component, and software developed by AI agents (<a href=\"https://vincenzoml.github.io/naima\">NAIMA</a>) under formally grounded supervision.",
+    "This is Vincenzo Ciancia’s research profile; for his portfolio as an AI architect and software maker, see <a href=\"https://make-become.github.io\">make become</a>."
   ],
   "open_problems": [
     {
