@@ -62,7 +62,10 @@ for i, (kw, name, eq, rhs) in enumerate(code):
         f'<tspan fill="var(--fg)">{rhs}</tspan></text>'
     )
 
-W = fx + 300
+# The box fits its longest line: 13px monospace is about 0.62em, so 8.1px a character, plus 18px padding each side.
+longest = max(len(f"{kw} {name} {eq} {rhs}") for kw, name, eq, rhs in code)
+BOX_W = math.ceil(36 + longest * 8.1)
+W = fx + BOX_W + 10
 H = OY + grid_w + 14
 svg = f'''<svg class="figure" viewBox="0 0 {W} {H}" role="img" aria-labelledby="fig-title fig-desc" xmlns="http://www.w3.org/2000/svg">
 <title id="fig-title">Spatial model checking</title>
@@ -78,7 +81,7 @@ svg = f'''<svg class="figure" viewBox="0 0 {W} {H}" role="img" aria-labelledby="
 @media (prefers-reduced-motion: reduce) {{ .figure .seg {{ animation: none; opacity: .92; }} }}
 </style>
 {chr(10).join(out)}
-<rect x="{fx}" y="{OY + 30}" width="290" height="118" rx="10" fill="var(--soft)" stroke="var(--rule)"/>
+<rect x="{fx}" y="{OY + 30}" width="{BOX_W}" height="118" rx="10" fill="var(--soft)" stroke="var(--rule)"/>
 {chr(10).join(lines)}
 <path d="M {fx - 4} {OY + 89} C {fx - 22} {OY + 89}, {fx - 18} {OY + 105}, {OX + grid_w - 6} {OY + 105}" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="3 4"/>
 <g transform="translate({fx + 18} {OY + 168})" class="code" font-size="12">
